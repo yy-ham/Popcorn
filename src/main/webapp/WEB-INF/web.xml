@@ -10,7 +10,7 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-    <servlet>
+  <servlet>
   	<servlet-name>sist</servlet-name>
   	<servlet-class>com.sist.controller.SistController</servlet-class>
   </servlet>
