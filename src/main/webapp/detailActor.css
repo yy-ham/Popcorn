@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0
+}
+
+p{
+	margin-bottom: 5px;	
+}
+
+ul{
+	list-style: none;
+	border: 5px solid pink;
+}
+li{
+	list-style: none;
+	float: left;
+	cursor: pointer;
+}
+
+.navigation_menu{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+
+/*상단 우측 아이콘 정렬*/
+#board_icon{
+	margin-left: 600px;
+}
+
+header{
+	margin: 0 auto;
+	width: 1300px;
+}
+
+#main_header{
+	width: 1300px;
+}
+
+#main_logo{
+	margin: 10px;
+	padding: 10px;
+}
+
+
+#page_wrapper{
+	background: rgb(243, 243, 243);
+}
+
+
+
+a{
+	text-decoration: none;
+	color: black;
+	
+}
+
+.menu_icon {
+	margin: 25px 10px 0 10px; /*위 오 아 왼*/
+	background: none;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+	cursor: pointer;
+}
+
+
+
+#content{
+	clear: both;
+	margin: 0 auto;
+	width: 960px;
+	border: 5px red solid;
+	padding: 30px;
+}
+
+#mainimg_container{
+	border: 5px solid blue;
+	margin-bottom: 100px;
+}
+
+#mainimg{
+	margin-left: 35px;
+}
+
+
+hr{
+	margin: 20px 0;
+}
+
+
+h2{
+	margin: 10px 0;
+}
+
+p{
+	margin-left: 10px;
+}
+
+
+#poster{
+	width: 150px;
+}

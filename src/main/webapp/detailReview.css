@@ -1,0 +1,296 @@
+* {
+	margin: 0;
+	padding: 0
+}
+
+p{
+	margin-bottom: 5px;	
+}
+
+ul{
+	list-style: none;
+	border: 5px solid pink;
+}
+li{
+	list-style: none;
+	float: left;
+	cursor: pointer;
+}
+
+.navigation_menu{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+
+/*상단 우측 아이콘 정렬*/
+#board_icon{
+	margin-left: 600px;
+}
+
+
+header{
+	margin: 0 auto;
+	width: 1300px;
+}
+
+#main_header{
+	width: 1300px;
+}
+
+#main_logo{
+	margin: 10px;
+	padding: 10px;
+}
+
+
+#basic_info{
+	padding: 50px;
+}
+
+
+
+#g{
+	border: 2px solid black;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#page_wrapper{
+	background: rgb(243, 243, 243);
+}
+
+
+
+a{
+	text-decoration: none;
+	color: black;
+	
+}
+
+.menu_icon {
+	margin: 25px 10px 0 10px; /*위 오 아 왼*/
+	background: none;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#b{
+	border: 3px solid blue;
+}
+
+
+
+
+#rating{
+	display: inline-block;	
+	border-width:300px;	
+	border: 3px solid black; 
+	padding: 10px;
+}
+#rating_list{
+	display: inline-block;	
+	border-width:300px;	
+	border: 3px solid red; 
+	padding: 10px;
+}
+#rating > p{
+	text-align: center;
+}
+
+
+.ratingimg{
+	margin: 0 10px;
+	margin-top: 5px;
+}
+
+
+
+#content{
+	clear: both;
+	margin: 0 auto;
+	width: 960px;
+	border: 5px red solid;
+	padding: 30px;
+}
+
+#poster_container{
+	border: 5px blue solid;
+	float: left;
+	margin-top: 7px;
+}
+
+#poster{
+	display: block;
+	border: 5px yellow solid;
+	float: left;
+}
+#info_container{
+	border: 5px green solid;
+	margin-left: 200px;
+	padding: 30px;
+}
+#movietitle{
+	font-size: 30px;
+	font-weight: bold;
+}
+#info{
+	font-size: 18px;
+}
+
+#gg{
+	border: 5px solid red;
+}
+
+
+
+#detail{
+	clear: both;
+	border: 5px solid gray;
+	margin-top: 50px;
+}
+hr{
+	margin: 20px 0;
+}
+#story_info{
+	border: blue 5px solid;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+#story_info > h2 {
+	margin-bottom: 10px;
+}
+#story_info > p {
+	margin-bottom: 10px;
+}
+
+.director{
+	margin-right: 10px;
+	border: 3px solid blue;
+	width: 270px;
+}
+
+.director p{
+	text-align: center;
+}
+
+#director_list{
+	border: 5px solid red;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+#director_list > h2 {
+	margin-bottom: 10px;
+}
+
+#directorimg_container{
+	border: 5px solid yellow;
+	width: 80px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#directorimg{
+	border-radius: 5px;
+}
+
+#directorname{
+	border: 5px solid red;
+	display: inline-block;
+	width: 150px;
+}
+
+.actor{
+	display: inline-block;
+	margin-right: 10px;
+	border: 3px solid blue;
+	width: 270px;
+	margin-bottom: 10px;
+}
+
+.actor p{
+	text-align: center;
+}
+
+#actor_list{
+	border: 5px solid green;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+#actor_list > h2 {
+	margin-bottom: 10px;
+}
+
+#actorimg_container{
+	border: 5px solid yellow;
+	width: 80px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#actorimg{
+	border-radius: 5px;
+}
+
+#actorname{
+	border: 5px solid red;
+	display: inline-block;
+	width: 150px;
+}
+
+/* review */
+
+#review{
+	margin-top: 10px;
+	padding: 10px;
+	border: 5px solid blue;	
+}
+
+#review > h2 {
+	margin-bottom: 10px;
+}
+#review > p {
+	text-align: right;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+
+.review{
+	margin-top: 50px;
+	background: gray;
+	margin: 10px;
+	width: 500px;
+	height: 100px;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+
+.input-hidden {
+  /* For Hiding Radio Button Circles */
+  position: absolute;
+  left: -9999px;
+}
+
+input[type="radio"]:checked + label > img {
+  border: 1px solid rgb(157, 255, 0);
+  box-shadow: 0 0 3px 3px #9e00e2;
+}
+
+input[type="radio"] + label > img {
+  border: 1px rgb(0, 0, 0);
+  padding: 10px;
+  transition: 500ms all;
+}
+
+input[type="radio"]{
+	display: none;
+}
+
+input[type="radio"]:checked + label > img {
+  transform: rotateZ(-10deg) rotateX(10deg);
+}
