@@ -28,7 +28,6 @@ public class ActorDAO {
 	}
 	
 	//actorno로 배우 정보 가져오기
-	//directorno로 감독 정보 가져오기
 		public ActorVO findByActorno(int actorno) {
 			ActorVO a = null;
 			String sql = "select * from actor where actorno = ?";
