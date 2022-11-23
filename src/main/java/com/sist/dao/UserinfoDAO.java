@@ -187,4 +187,59 @@ public class UserinfoDAO {
 		}
 		return re;
 	}
+	
+	//비밀번호 재설정 전 이름, 이메일 입력. 해당 이름과 이메일로 검색된 레코드가 있을 경우 수정페이지로.
+	public UserinfoVO searchPwd(String username, String email) {
+		UserinfoVO userinfovo = null;
+		String sql = "select * from userinfo where username = ? and email = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds = (DataSource)context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				userinfovo = new UserinfoVO();
+				userinfovo.setUserno(rs.getInt("userno"));
+				userinfovo.setUsername(rs.getString("username"));
+				userinfovo.setEmail(rs.getString("email"));
+				userinfovo.setPwd(rs.getString("pwd"));
+				userinfovo.setNickname(rs.getString("nickname"));
+				userinfovo.setUserimg(rs.getString("userimg"));
+			}
+		} catch (Exception e) {
+			System.out.println("error:" + e.getMessage());
+		}finally {
+			if(rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return userinfovo;
+	}
 }
