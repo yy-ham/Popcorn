@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -78,7 +79,7 @@ public class MovieDAO {
 	}
 
 	//메인 페이지 - 영화 검색하기
-	public ArrayList<MovieVO> searchMovie(String keyword){
+	/*public ArrayList<MovieVO> searchMovie(String keyword){
 		ArrayList<MovieVO> list = new ArrayList<MovieVO>();
 		String sql = "select movieno, poster, movietitle from movie where movietitle like '%"+keyword+"%'";
 		Connection conn = null;
@@ -127,6 +128,68 @@ public class MovieDAO {
 		}
 		return list;
 	}
+	*/
+	
+	public ArrayList<MovieVO> searchByMovietitle(String movietitle) {
+		ArrayList<MovieVO> list=null;
+		String sql="select * from movie where movietitle like '%"+movietitle+"%'";
+		Connection conn =null;
+		Statement stmt=null;
+		ResultSet rs = null;
+		try {
+			list= new ArrayList<MovieVO>();
+			Context context = new InitialContext();
+			DataSource ds=(DataSource)context.lookup("java:/comp/env/mydb");
+			conn=ds.getConnection();
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql);
+			while(rs.next()) {
+				MovieVO movievo = new MovieVO();
+				movievo.setMovieno(rs.getInt("movieno"));
+				movievo.setMovietitle(rs.getString("movietitle"));
+				movievo.setGenre(rs.getString("genre"));
+				movievo.setCountry(rs.getString("country"));
+				movievo.setRunningtime(rs.getInt("runningtime"));
+				movievo.setReleasedate(rs.getDate("releasedate"));
+				movievo.setAgelimit(rs.getString("agelimit"));
+				movievo.setStory(rs.getString("story"));
+				movievo.setPoster(rs.getString("poster"));
+				list.add(movievo);
+			}
+			
+		}catch (Exception e) {
+			System.out.println("error : "+e.getMessage());
+		}finally {
+			if(conn!=null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(stmt!=null) {
+				try {
+					stmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(rs!=null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		return list;
+		
+	}
+	
 	
 	//영화 메인 페이지 - 자동 추천 검색어
 	public ArrayList<String> searchMovietitle(String keyword){
