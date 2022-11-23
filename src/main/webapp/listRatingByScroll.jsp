@@ -5,11 +5,15 @@
 <%@ page language="java" contentType="application/json; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	int userno=Integer.parseInt(session.getAttribute("userno")+"");
-	int end=Integer.parseInt(request.getParameter("end"));
-	MyPageRatingDAO ratingdao=MyPageRatingDAO.getInstance();
-	ArrayList<MyPageRatingVO> list_rating=ratingdao.findMyRating(userno,end-3,end);
-	Gson gson=new Gson();
-	String str=gson.toJson(list_rating);
-	out.print(str);
+	if(session.getAttribute("userno")!=null){
+		int userno=Integer.parseInt(session.getAttribute("userno")+"");
+		int end=Integer.parseInt(request.getParameter("end"));
+		MyPageRatingDAO ratingdao=MyPageRatingDAO.getInstance();
+		ArrayList<MyPageRatingVO> list_rating=ratingdao.findMyRating(userno,end-3,end);
+		Gson gson=new Gson();
+		String str=gson.toJson(list_rating);
+		out.print(str);
+	}else{
+		response.sendRedirect("login.do");
+	}
 %>
