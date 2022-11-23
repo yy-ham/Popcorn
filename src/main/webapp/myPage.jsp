@@ -50,6 +50,8 @@
 		top:150px;
 		right:5%;
 		left:5%;
+		width: 960px;
+		margin: 0 auto;
 	}
 	.smallTitle{
 		font-size:22px;
@@ -131,7 +133,7 @@
 	
 	/* board */
 	#myBoard{
-		overflow:hidden;
+		/*overflow:hidden;*/
 		border:1px solid red;
 		height:418px;
 	}
@@ -144,7 +146,7 @@
 		width:700px;
 		height:100px;
 		border:1px solid orange;
-		overflow:hidden;
+		/*overflow:hidden;*/
 	}
 	.boardElements{
 		margin:8px;
@@ -196,7 +198,8 @@ hr{
 header{
 	/*margin: 0 auto;*/
 	width: 1300px;
-	
+	background: rgb(243, 243, 243);
+	z-index: 50;
 }
 .navigation_menu{
 	margin: 20px 0;
@@ -234,6 +237,8 @@ header{
 	/*border: 5px solid red;*/
 	display: block;
 	left: 0; top: 0; right: 0;
+	background: rgb(243, 243, 243);
+	z-index: 50;
 }
 
 

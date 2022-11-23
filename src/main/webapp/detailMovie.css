@@ -77,6 +77,7 @@ header{
 	/*border: 5px solid red;*/
 	display: block;
 	left: 0; top: 0; right: 0;
+	background: rgb(243, 243, 243);
 }
 
 

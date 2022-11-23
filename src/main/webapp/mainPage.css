@@ -39,6 +39,7 @@ hr{
 header{
 	/*margin: 0 auto;*/
 	width: 1300px;
+	background: rgb(243, 243, 243);
 	
 }
 .navigation_menu{
@@ -77,6 +78,7 @@ header{
 	/*border: 5px solid red;*/
 	display: block;
 	left: 0; top: 0; right: 0;
+	background: rgb(243, 243, 243);
 }
 
 

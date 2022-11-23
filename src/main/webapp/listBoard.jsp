@@ -21,7 +21,7 @@
 	}
 	
 	#controller{
-		width:10%;
+		width:30%;
 		margin:0px auto;
 		text-align:center;
 	}
