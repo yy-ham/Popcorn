@@ -253,7 +253,7 @@
 					<h2>리뷰</h2>
 					<!-- 리뷰 등록, Button to Open the Modal -->
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="btnWriteReview">
-					  <img alt="" src="./images/icon/insertReview_icon.png" width="40">
+					  <img alt="" src="./images/icon/insertReview_icon.png" width="30">
 					</button>
 					<div id="review_list">
 						<c:forEach var="review" items="${review_list }">
@@ -275,7 +275,7 @@
 										<img alt="" src="images/icon/${review.ratingcontent }_click.png" id="rating_content" width="50">
 									</c:if>
 								</div>
-							</div> <!-- end #review_container -->
+							</div> <!-- end #review -->
 						</c:forEach>
 						<br><br>
 						<p>

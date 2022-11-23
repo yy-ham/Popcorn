@@ -268,12 +268,12 @@
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border: 3px solid red;
+  /*border: 3px solid red;*/
   cursor: pointer;
 }
 
 #btnClose{
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 	padding: 15px;
 	background: white;
 	cursor: pointer;

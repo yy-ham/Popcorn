@@ -289,6 +289,7 @@ input[type="checkbox"]{
 #btnWriteReview{
 	float: right;
 	margin-bottom: 20px;
+	margin-right: 20px;
 }
 
 #review_list{
@@ -302,7 +303,23 @@ input[type="checkbox"]{
 }
 #review{
 	background: #D9CDBF;
+	width: 500px;
+	border-radius: 10px;
 }
+
+#userinfo{
+	border: 2px solid red;
+	width: 60px;
+}
+
+#review_content{
+	border: 2px solid red;
+}
+
+#ratinginfo{
+	border: 2px solid red;
+}
+
 .review{
 	margin-top: 50px;
 	background: gray;
@@ -316,3 +333,4 @@ input[type="checkbox"]{
 #review_more{
 	text-align: center;
 }
+

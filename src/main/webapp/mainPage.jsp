@@ -12,6 +12,7 @@
 	$(function () {
 		//자동 검색어 추천
 		$("#keyword").keyup(function () {
+			$("#movietitle_list").empty();
 			var keyword = $("#keyword").val();
 			console.log("keyword:"+keyword);
 			if(keyword == ""){
