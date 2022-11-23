@@ -125,8 +125,8 @@
 <script type="text/javascript">
 	$(function(){
 		
-		//var userno=sessionStorage.getItem("userno");
-		var userno=1;
+		var userno=$("#hidden_userno").val();
+		//var userno=1;
 		$("#insertBoard").attr("href","insertBoard.do?userno="+userno);
 		
 		$(".boardtitle").click(function(e){
@@ -252,6 +252,7 @@
 		</div> <!-- end #header_container -->
 
 	<div id="board_container">
+		<input type="hidden" value="${userno }" id="hidden_userno">
 		<h1><a href="listBoard.do">자유 게시판</a></h1>
 		<a id="insertBoard">게시물 등록</a>
 		<table border="1" width="60%">
