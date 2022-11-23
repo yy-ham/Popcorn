@@ -307,7 +307,7 @@ $(function(){
 		<article id="profile">
 			<!-- 프로필사진 -->
 			<div id="userimg" class="profileElements">
-				<img src="./images/userimg/${userinfovo.userimg }" width="100" height="100">
+				<img src="images/userimg/${userinfovo.userimg }" width="100" height="100">
 			</div>
 			<!-- 닉네임 -->
 			<div id="nickname" class="profileElements">${userinfovo.nickname }</div>

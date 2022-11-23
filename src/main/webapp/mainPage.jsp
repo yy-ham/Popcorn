@@ -10,6 +10,12 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	$(function () {
+		
+		$("#btnSearchMovie").click(function(){
+			var keyword=$("#keyword").val();
+			$(location).attr("href","searchMovieResult.do?keyword="+keyword);
+		})
+
 		//자동 검색어 추천
 		$("#keyword").keyup(function () {
 			$("#movietitle_list").empty();
@@ -108,7 +114,7 @@
 				<!-- 검색창 -->
 				<div id="search_container">
 					<input type="text" id="keyword" name="keyword">
-					<a href="searchMovieResult.jsp">
+					<a href="#">
 						<button id="btnSearchMovie">
 							<img alt="" src="./images/icon/searchMovie_icon.png" id="searchMovie_icon">
 						</button>
