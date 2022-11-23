@@ -131,9 +131,9 @@
 	#myrating{
 		overflow:hidden;
 		border:1px solid #D9CDBF;
-		margin-top:140px;
-		margin-left:100px;
-		margin-right:100px;
+		margin-top:20px;
+		margin-left:110px;
+		margin-right:110px;
 		border-radius:5px;
 	}
 	#ul{
@@ -148,7 +148,13 @@
 	.ratingcontent{
 		padding-top:7px;
 	}
-	
+	#title{
+		font-size:22px;
+		margin-left:115px;
+	}
+	section{
+		margin-top:180px;
+	}
 	
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -187,17 +193,17 @@ $(function(){
 							var div_ratingcontent=$("<div></div>").addClass("ratingcontent");
 							if(this.ratingcontent=='good'){
 								div_ratingcontent.append($("<img/>").attr({
-									src:"./images/rating/good.png",
+									src:"images/icon/good_click.png",
 									width:30
 										}))
 							}else if(this.ratingcontent=='fair'){
 								div_ratingcontent.append($("<img/>").attr({
-									src:"./images/rating/fair.png",
+									src:"images/icon/fair_click.png",
 									width:30
 										}))
 							}else if(this.ratingcontent=='bad'){
 								div_ratingcontent.append($("<img/>").attr({
-									src:"./images/rating/bad.png",
+									src:"images/icon/bad_click.png",
 									width:30
 										}))
 							}
@@ -217,7 +223,7 @@ $(function(){
 </script>
 </head>
 <body>
-		<!-- header -->
+	<!-- header -->
 	<div id="header_container">
 		<header>
 			<nav>
@@ -268,6 +274,7 @@ $(function(){
 	</div> <!-- end #header_container -->
 	
 	<section>
+		<div id="title"><b>내가 평가한 영화</b></div>
 		<article id="myrating">
 			<ul id="ul">
 				<c:forEach var="ra" items="${list_rating }">
@@ -280,13 +287,13 @@ $(function(){
 						<a href="detailMovie.do?movieno=${ra.movieno }">${ra.movietitle }</a>
 						<div class="ratingcontent">
 							<c:if test="${ra.ratingcontent =='good'}">
-								<img src="./images/rating/good.png" width="30">
+								<img src="images\icon\good_click.png" width="30">
 							</c:if>
 							<c:if test="${ra.ratingcontent =='fair'}">
-								<img src="./images/rating/fair.png" width="30">
+								<img src="images\icon\fair_click.png" width="30">
 							</c:if>
 							<c:if test="${ra.ratingcontent =='bad'}">
-								<img src="./images/rating/bad.png" width="30">
+								<img src="images\icon\bad_click.png" width="30">
 							</c:if>
 						</div>
 					</li>

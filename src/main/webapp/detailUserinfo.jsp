@@ -157,9 +157,14 @@
 		position:absolute;
 		bottom:10%;
 		left:47%;
+		padding:3px;
 	}
 	#pwdTable td, table th {
     	padding:3px 23px;
+	}
+	#nicknameAndBtn{
+		position:absolute;
+		left:25%;
 	}
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -387,8 +392,10 @@ $(function(){
 				<div id="close_nickname" class="close">X</div>
 				<div>닉네임 변경</div>
 				<hr>
-				<input id="newNickname" required="required" value="${userinfovo.nickname }">
-				<button id="btn_checkNickname">중복확인</button>
+				<div id="nicknameAndBtn">
+					<input id="newNickname" required="required" value="${userinfovo.nickname }">
+					<button id="btn_checkNickname">중복확인</button>
+				</div>
 				<br>
 				<div id="checkResult"></div>
 				<br>

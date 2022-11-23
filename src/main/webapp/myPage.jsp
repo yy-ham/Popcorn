@@ -373,13 +373,13 @@ $(function(){
 							</div>
 							<div class="ratingcontent">
 								<c:if test="${ra.ratingcontent =='good'}">
-									<img src="./images/rating/good.png" width="30">
+									<img src="images\icon\good_click.png" width="30">
 								</c:if>
 								<c:if test="${ra.ratingcontent =='fair'}">
-									<img src="./images/rating/fair.png" width="30">
+									<img src="images\icon\fair_click.png" width="30">
 								</c:if>
 								<c:if test="${ra.ratingcontent =='bad'}">
-									<img src="./images/rating/bad.png" width="30">
+									<img src="images\icon\bad_click.png" width="30">
 								</c:if>
 							</div>
 						</div>
@@ -405,13 +405,13 @@ $(function(){
 								</div>
 								<div class="reviewElementsLower">
 									<c:if test="${re.ratingcontent =='good'}">
-										<img src="./images/rating/good.png" width="30">
+										<img src="images\icon\good_click.png" width="30">
 									</c:if>
 									<c:if test="${re.ratingcontent =='fair'}">
-										<img src="./images/rating/fair.png" width="30">
+										<img src="images\icon\fair_click.png" width="30">
 									</c:if>
 									<c:if test="${re.ratingcontent =='bad'}">
-										<img src="./images/rating/bad.png" width="30">
+										<img src="images\icon\bad_click.png" width="30">
 									</c:if>
 								</div>
 								<div class="reviewElementsLower ellipsis">${re.reviewcontent }</div>

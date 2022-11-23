@@ -5,51 +5,120 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>팝콘-내가 쓴 게시글</title>
 <style type="text/css">
-	a{text-decoration:none;}
-	#logo{
-		position:absolute;
-		left:50%;
-		margin-left:-150px;
-		width:300px;
+	/*상단바*/
+	* {
+	margin: 0;
+	padding: 0;
 	}
+	
+	/*전체*/
+	body{
+		background: rgb(243, 243, 243);
+	}
+	
+	/*태그 선택자 설정*/
+	p{
+		margin-bottom: 5px;
+		margin-left: 10px;
+	}
+	
+	li{
+		list-style: none;
+		float: left;
+	}
+	
+	button{
+		cursor: pointer;
+	}
+	
+	a{
+		text-decoration: none;
+		color: black;
+	}
+	
+	hr{
+		margin: 20px 0;
+	}
+	
+	
+	/*상단바*/
+	/*중앙 정렬*/
 	header{
-		position:fixed;
-		left:0; top:0; right:0;
-		height:130px;
-		background:white;
-		z-index:99;
-		padding-top:10px;
+		/*margin: 0 auto;*/
+		width: 1300px;
+		background: rgb(243, 243, 243);
+		z-index: 50;
 	}
-	#logout{
-		position:absolute;
-		right:20px;
-		padding:5px;
-		border:3px solid black;
+	.navigation_menu{
+		margin: 20px 0;
+	}
+	
+	/*상단 우측 아이콘 정렬*/
+	#empty{
+		margin-left: 570px;
+	}
+	
+	/*메인로고*/
+	#mainlogo_li{
+		margin-left: 30px;
+	}
+	
+	.menu_icon {
+		margin: 32px 10px 0 10px; /*위 오 아 왼*/
+		background: none;
+		font-size: 20px;
+		font-weight: bold;
+		padding: 5px;
+		cursor: pointer;
+		font-family: '나눔스퀘어라운드';
+		/*border: 2px solid #BF9B7A;*/
+		/*border-radius: 5px;*/
+		border: none;
+		color: #0D0D0D;
+	}
+	
+	#header_container{
+		position: fixed;
+		width: 1300px;
+		margin: 0 auto;
+		/*margin-left: 150px;*/
+		/*border: 5px solid red;*/
+		display: block;
+		left: 0; top: 0; right: 0;
+		background: rgb(243, 243, 243);
+		z-index: 50;
+		border-bottom:1px solid #D9CDBF;
+	}
+	
+	
+	section{
+		margin-top:180px;
 	}
 	#title{
-		position:absolute;
-		left:0; right:0;
-		top:50px;
-		font-size:26px;
-		padding:20px;
+		font-size:22px;
+		margin-left:150px;
 	}
+	
 	#myBoard{
 		overflow:hidden;
-		border:1px solid red;
-		height:auto;
-		margin-top:150px;
+		border:1px solid #D9CDBF;
+		margin-top:20px;
+		margin-left:150px;
+		margin-right:150px;
+		border-radius:5px;
 	}
 	#ul_board{
 		list-style:none;
 	}
 	.eachBoard{
-		margin:10px;
+		margin:10px 120px;;
 		padding:20px;
-		width:700px;
+		width:900px;
 		height:100px;
-		border:1px solid orange;
+		border:1px solid #D93223;
+		border-radius:5px;
 		overflow:hidden;
 	}
 	.boardElements{
@@ -63,14 +132,18 @@
 	#ul_pageNum{
 		overflow:hidden;
 		list-style:none;
-		border:1px solid blue;
-		width:100px;
+		width:200px;
 		left:45px;
+		display:block;
+		margin:0 0 10px 550px;
 	}
 	.pageNum{
 		float:left;
 		margin:5px;
 		cursor:pointer;
+	}
+	.ul{
+		display:block;
 	}
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -108,24 +181,60 @@
 </script>
 </head>
 <body>
-	<header>
-		<!-- 로고 -->
-		<div id="logo">
-			<a href="mainPage.do"><img src="./images/logo.png" width=300px;></a>
-		</div>
-		
-		<div id="logout">
-			<a href="logout.do">로그아웃</a>
-		</div>
-		
-		<div id="title">
-			<div><b>내 게시글</b></div>
-			<hr>
-		</div>
-	</header>
+	<!-- header -->
+	<div id="header_container">
+		<header>
+			<nav>
+				<ul id="menu_list">
+					<!-- 메인 로고 -->
+					<li class="navigation_menu" id="mainlogo_li">
+						<a href="mainPage.do">
+							<img src="./images/mainlogo.png" width="300" id="mainlogo">
+						</a>
+					</li>
+					<li id="empty">&nbsp;</li>
+					<!-- 자유게시판 아이콘 -->
+					<li class="navigation_menu">
+						<a href="listBoard.do">
+							<button class="menu_icon" id="board_icon">자유게시판</button>
+						</a>
+					</li>
+					<!-- 회원가입 / 마이페이지 아이콘 -->
+					<li class="navigation_menu">
+						<c:if test="${userno != null }">
+							<a href="myPage.do">
+								<button class="menu_icon" id="mypage_icon">마이페이지</button>
+							</a>
+						</c:if>
+						<c:if test="${userno == null }">
+							<a href="#">
+								<button class="menu_icon" id="join_icon">회원가입</button>
+							</a>
+						</c:if>
+					</li>
+					<!-- 로그인 / 로그아웃 아이콘 -->
+					<li class="navigation_menu">
+						<input type="hidden" value="${userno }" id="userno">
+						<c:if test="${userno != null }">
+							<a href="#">
+								<button class="menu_icon" id="logout_icon">로그아웃</button>
+							</a>
+						</c:if>
+						<c:if test="${userno == null }">
+							<a href="#">
+								<button class="menu_icon" id="login_icon">로그인</button>
+							</a>
+						</c:if>
+					</li>
+				</ul> <!-- end #menu_list -->
+			</nav>
+		</header>
+	</div> <!-- end #header_container -->
+	
 	<section>
+		<div id="title">내가 쓴 게시글</div>
 		<article id="myBoard">
-			<ul id="ul_board">
+			<ul id="ul_board" class="ul">
 				<c:forEach var="b" items="${list_board }">
 					<li class="eachBoard">
 						<a href="detailBoard.do?boardno=${b.boardno }" class="boardElements ellipsis">${b.boardtitle }</a>
@@ -134,7 +243,7 @@
 					</li>
 				</c:forEach>
 			</ul>
-			<ul id="ul_pageNum"></ul>
+			<ul id="ul_pageNum" class="ul"></ul>
 		</article>
 	</section>
 </body>
