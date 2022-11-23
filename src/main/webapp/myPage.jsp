@@ -7,9 +7,94 @@
 <meta charset="UTF-8">
 <title>팝콘-마이페이지</title>
 <style type="text/css">
-	a{text-decoration:none;}
+	/*상단바*/
+	* {
+	margin: 0;
+	padding: 0;
+	}
 	
-	/* header */
+	/*전체*/
+	body{
+		background: rgb(243, 243, 243);
+	}
+	
+	/*태그 선택자 설정*/
+	p{
+		margin-bottom: 5px;
+		margin-left: 10px;
+	}
+	
+	li{
+		list-style: none;
+		float: left;
+	}
+	
+	button{
+		cursor: pointer;
+	}
+	
+	a{
+		text-decoration: none;
+		color: black;
+	}
+	
+	hr{
+		margin: 20px 0;
+	}
+	
+	
+	/*상단바*/
+	/*중앙 정렬*/
+	header{
+		/*margin: 0 auto;*/
+		width: 1300px;
+		background: rgb(243, 243, 243);
+		z-index: 50;
+	}
+	.navigation_menu{
+		margin: 20px 0;
+	}
+	
+	/*상단 우측 아이콘 정렬*/
+	#empty{
+		margin-left: 570px;
+	}
+	
+	/*메인로고*/
+	#mainlogo_li{
+		margin-left: 30px;
+	}
+	
+	.menu_icon {
+		margin: 32px 10px 0 10px; /*위 오 아 왼*/
+		background: none;
+		font-size: 20px;
+		font-weight: bold;
+		padding: 5px;
+		cursor: pointer;
+		font-family: '나눔스퀘어라운드';
+		/*border: 2px solid #BF9B7A;*/
+		/*border-radius: 5px;*/
+		border: none;
+		color: #0D0D0D;
+	}
+	
+	#header_container{
+		position: fixed;
+		width: 1300px;
+		margin: 0 auto;
+		/*margin-left: 150px;*/
+		/*border: 5px solid red;*/
+		display: block;
+		left: 0; top: 0; right: 0;
+		background: rgb(243, 243, 243);
+		z-index: 50;
+		border-bottom:1px solid #D9CDBF;
+	}
+
+	
+	
+	/*
 	#logo{
 		position:absolute;
 		left:50%;
@@ -17,10 +102,8 @@
 		width:300px;
 		border:1px solid red;
 	}
-	#img{
-		border:1px solid black;
-	}
-	/*
+
+	
 	header{
 		position:fixed;
 		left:0; top:0; right:0;
@@ -29,7 +112,7 @@
 		z-index:99;
 		padding-top:10px;
 	}
-	*/
+	
 	#logout{
 		position:absolute;
 		right:20px;
@@ -42,15 +125,21 @@
 		top:50px;
 		font-size:26px;
 		padding:20px;
+	}*/
+	
+	
+	#title{
+		font-size:26px;
 	}
 	
 	/* section 공통 */
+	
 	#section{
 		position:absolute;
 		top:150px;
 		right:5%;
 		left:5%;
-		width: 960px;
+		width: 1000px;
 		margin: 0 auto;
 	}
 	.smallTitle{
@@ -66,7 +155,6 @@
 		height:200px;
 		width:150px;
 		position:relative;
-		border:1px solid blue;
 		left:44%;
 	}
 	.profileElements{
@@ -84,19 +172,36 @@
 		text-align:center;
 		margin-top:80%;
 	}
+	/*
 	#userinfo{
 		text-align:center;
 		margin-top:100%;
+		
 	}
+	#userinfo_text{
+		background-color:#D9CDBF;
+		border-radius:3px;
+		color:#0D0D0D;
+		padding:3px;
+	}*/
+	
+	
+	#userinfoBtn{
+		position:absolute;
+		left:150px;
+		top:120px;
+	}
+	
 	
 	/* rating */
 	#rating{
-		border: 1px solid yellow;
+		border: 1px solid #D9CDBF;
+		border-radius:10px;
+		padding:20px;
 	}
 	#myrating{
 		overflow:hidden;
 		height:310px;
-		border:1px solid red;
 	}
 	.movie{
 		float:left;
@@ -109,14 +214,18 @@
 	
 	/* review */
 	#myReview{
-		border: solid 1px blue;
+		border: 1px solid #D9CDBF;
+		border-radius:10px;
+		padding:20px;
 		height:490px;
+		margin:50px 0px;
 	}
 	#reviewContainer{
 		overflow:hidden;
 	}
 	.eachReview{
-		border:3px solid black;
+		border:1px solid #D93223;
+		border-radius:10px;
 		height:130px;
 		margin:10px;
 		padding:10px;
@@ -134,8 +243,12 @@
 	/* board */
 	#myBoard{
 		/*overflow:hidden;*/
-		border:1px solid red;
+		border: 1px solid #D9CDBF;
+		border-radius:10px;
+		padding:20px;
 		height:418px;
+		margin-top:50px;
+		margin-bottom:100px;
 	}
 	#ul{
 		list-style:none;
@@ -145,7 +258,8 @@
 		padding:20px;
 		width:700px;
 		height:100px;
-		border:1px solid orange;
+		border:1px solid #D93223;
+		border-radius:10px;
 		/*overflow:hidden;*/
 	}
 	.boardElements{
@@ -156,91 +270,6 @@
 		overflow:hidden;
 		text-overflow:ellipsis;
 	}
-	
-	/*상단바*/
-	* {
-	margin: 0;
-	padding: 0
-}
-
-/*전체*/
-body{
-	background: rgb(243, 243, 243);
-}
-
-/*태그 선택자 설정*/
-p{
-	margin-bottom: 5px;
-	margin-left: 10px;
-}
-
-li{
-	list-style: none;
-	float: left;
-}
-
-button{
-	cursor: pointer;
-}
-
-a{
-	text-decoration: none;
-	color: black;
-}
-
-hr{
-	margin: 20px 0;
-}
-
-
-/*상단바*/
-/*중앙 정렬*/
-header{
-	/*margin: 0 auto;*/
-	width: 1300px;
-	background: rgb(243, 243, 243);
-	z-index: 50;
-}
-.navigation_menu{
-	margin: 20px 0;
-}
-
-/*상단 우측 아이콘 정렬*/
-#empty{
-	margin-left: 570px;
-}
-
-/*메인로고*/
-#mainlogo_li{
-	margin-left: 30px;
-}
-
-.menu_icon {
-	margin: 32px 10px 0 10px; /*위 오 아 왼*/
-	background: none;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 5px;
-	cursor: pointer;
-	font-family: '나눔스퀘어라운드';
-	/*border: 2px solid #BF9B7A;*/
-	/*border-radius: 5px;*/
-	border: none;
-	color: #0D0D0D;
-}
-
-#header_container{
-	position: fixed;
-	width: 1300px;
-	margin: 0 auto;
-	/*margin-left: 150px;*/
-	/*border: 5px solid red;*/
-	display: block;
-	left: 0; top: 0; right: 0;
-	background: rgb(243, 243, 243);
-	z-index: 50;
-}
-
 
 
 </style>
@@ -304,17 +333,28 @@ $(function(){
 	
 		<section id="section">
 	
-		<article id="profile">
-			<!-- 프로필사진 -->
-			<div id="userimg" class="profileElements">
-				<img src="./images/userimg/${userinfovo.userimg }" width="100" height="100">
-			</div>
-			<!-- 닉네임 -->
-			<div id="nickname" class="profileElements">${userinfovo.nickname }</div>
-			<div id="userinfo" class="profileElements">
-				<a href="detailUserinfo.do">회원정보</a>
-			</div>
-			<br>
+
+			<div id="title"><b>마이페이지</b></div>
+			
+			<article id="profile">
+				<!-- 프로필사진 -->
+				<div id="userimg" class="profileElements">
+					<img src="./images/userimg/${userinfovo.userimg }" width="100" height="100">
+				</div>
+				<div>
+					<!-- 닉네임 -->
+					<span id="nickname" class="profileElements nickAndImg">${userinfovo.nickname }</span>
+					<a id="userinfoBtn" class="profileElements nickAndImg" href="detailUserinfo.do">
+						<img src="images/icon/pencil.png" width="20">
+					</a>
+				</div>
+				<!-- 
+				<div id="userinfo" class="profileElements">
+					<a id="userinfo_text" href="detailUserinfo.do">회원정보</a>
+				</div>
+				 -->
+				 
+				<br>
 			</article>
 			
 			<article id="rating">
@@ -399,7 +439,8 @@ $(function(){
 			</article>
 		
 		</section>
-	
+		
+		<footer></footer>
 	
 </body>
 </html>

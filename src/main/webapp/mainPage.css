@@ -41,6 +41,7 @@ header{
 	width: 1300px;
 	background: rgb(243, 243, 243);
 	
+	
 }
 .navigation_menu{
 	margin: 20px 0;
@@ -79,6 +80,7 @@ header{
 	display: block;
 	left: 0; top: 0; right: 0;
 	background: rgb(243, 243, 243);
+	z-index:150;
 }
 
 
