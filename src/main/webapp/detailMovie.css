@@ -78,6 +78,7 @@ header{
 	display: block;
 	left: 0; top: 0; right: 0;
 	background: rgb(243, 243, 243);
+	border-bottom:1px solid #D9CDBF;
 }
 
 

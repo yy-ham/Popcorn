@@ -108,6 +108,7 @@
 		/*border: 5px solid red;*/
 		display: block;
 		left: 0; top: 0; right: 0;
+		border-bottom:1px solid #D9CDBF;
 	}
 	
 	#board_container{

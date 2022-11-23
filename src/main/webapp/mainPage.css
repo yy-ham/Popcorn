@@ -80,7 +80,8 @@ header{
 	display: block;
 	left: 0; top: 0; right: 0;
 	background: rgb(243, 243, 243);
-	z-index:150;
+	z-index: 50;
+	border-bottom:1px solid #D9CDBF;
 }
 
 
