@@ -47,52 +47,52 @@
 		<!-- header -->
 		<div id="header_container">
 			<header>
-			<nav>
-				<ul id="menu_list">
-					<!-- 메인 로고 -->
-					<li class="navigation_menu" id="mainlogo_li">
-						<a href="mainPage.do">
-							<img src="./images/mainlogo.png" width="300" id="mainlogo">
-						</a>
-					</li>
-					<li id="empty">&nbsp;</li>
-					<!-- 자유게시판 아이콘 -->
-					<li class="navigation_menu">
-						<a href="listBoard.do">
-							<button class="menu_icon" id="board_icon">자유게시판</button>
-						</a>
-					</li>
-					<!-- 회원가입 / 마이페이지 아이콘 -->
-					<li class="navigation_menu">
-						<c:if test="${userno != null }">
-							<a href="myPage.do">
-								<button class="menu_icon" id="mypage_icon">마이페이지</button>
+				<nav>
+					<ul id="menu_list">
+						<!-- 메인 로고 -->
+						<li class="navigation_menu" id="mainlogo_li">
+							<a href="mainPage.do">
+								<img src="./images/mainlogo.png" width="300" id="mainlogo">
 							</a>
-						</c:if>
-						<c:if test="${userno == null }">
-							<a href="#">
-								<button class="menu_icon" id="join_icon">회원가입</button>
+						</li>
+						<li id="empty">&nbsp;</li>
+						<!-- 자유게시판 아이콘 -->
+						<li class="navigation_menu">
+							<a href="listBoard.do">
+								<button class="menu_icon" id="board_icon">자유게시판</button>
 							</a>
-						</c:if>
-					</li>
-					<!-- 로그인 / 로그아웃 아이콘 -->
-					<li class="navigation_menu">
-						<input type="hidden" value="${userno }" id="userno">
-						<c:if test="${userno != null }">
-							<a href="#">
-								<button class="menu_icon" id="logout_icon">로그아웃</button>
-							</a>
-						</c:if>
-						<c:if test="${userno == null }">
-							<a href="#">
-								<button class="menu_icon" id="login_icon">로그인</button>
-							</a>
-						</c:if>
-					</li>
-				</ul> <!-- end #menu_list -->
-			</nav>
-		</header>
-		</div>
+						</li>
+						<!-- 회원가입 / 마이페이지 아이콘 -->
+						<li class="navigation_menu">
+							<c:if test="${userno != null }">
+								<a href="myPage.do">
+									<button class="menu_icon" id="mypage_icon">마이페이지</button>
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
+									<button class="menu_icon" id="join_icon">회원가입</button>
+								</a>
+							</c:if>
+						</li>
+						<!-- 로그인 / 로그아웃 아이콘 -->
+						<li class="navigation_menu">
+							<input type="hidden" value="${userno }" id="userno">
+							<c:if test="${userno != null }">
+								<a href="#">
+									<button class="menu_icon" id="logout_icon">로그아웃</button>
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
+									<button class="menu_icon" id="login_icon">로그인</button>
+								</a>
+							</c:if>
+						</li>
+					</ul> <!-- end #menu_list -->
+				</nav>
+			</header>
+		</div> <!-- end #header_container -->
 		
 		
 		<!-- content -->

@@ -5,7 +5,7 @@
 }
 
 /*전체*/
-#page_wrapper{
+body{
 	background: rgb(243, 243, 243);
 }
 
@@ -37,7 +37,7 @@ hr{
 /*상단바*/
 /*중앙 정렬*/
 header{
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	width: 1300px;
 	
 }
@@ -72,18 +72,24 @@ header{
 #header_container{
 	position: fixed;
 	width: 1300px;
-	margin-left: 150px;
+	margin: 0 auto;
+	/*margin-left: 150px;*/
+	/*border: 5px solid red;*/
+	display: block;
+	left: 0; top: 0; right: 0;
 }
 
 
 /*body*/
 #content{
-	clear: both;
+	/*clear: both;*/
 	margin: 0 auto;
+	margin-top: 200px;
 	width: 960px;
 	border: 2px solid #BF9B7A;
 	padding: 30px;
 	border-radius: 5px;
+	display: block;
 }
 
 
