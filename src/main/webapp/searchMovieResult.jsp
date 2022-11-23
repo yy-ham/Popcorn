@@ -84,7 +84,7 @@
 					$.each(list,function(){
 							
 							var div=$("<div></div>").addClass("item");
-							var img=$("<img/>").attr({"src":"img/poster/"+this.poster,
+							var img=$("<img/>").attr({"src":"images/poster/"+this.poster,
 														"width":"180px",		
 														"height":"250px"});
 							var br = $("<br>");
@@ -92,7 +92,8 @@
 							var span2 = $("<span></span>").html(this.agelimit).addClass("movie_name");
 							var span3 = $("<span></span>").html(this.genre).addClass("movie_name");
 							$(div).append(img,br,span,span2,span3);
-							$("#list").append(div);
+							var a = $("<a></a>").append(div).attr("href", "detailMovie.do?movieno="+this.movieno);
+							$("#list").append(a);
 								
 							})
 							
@@ -110,8 +111,9 @@
 </script>
 </head>
 <body>
-
-	<img src="img/pagelogo.png" width="300px" height="100px"><br>
+	<a href="mainPage.do">
+		<img src="images/mainlogo.png" width="300px" height="100px"><br>
+	</a>
 	<div id="type_moviename">
 		<div id="insert">
 			<input type="text" placeholder="영화제목을 입력하세요" id="input_moviename">
@@ -122,7 +124,7 @@
 	
 	<div id="list">
 		<div id="list_inner">
-			<img src="img/poster/기생충.jpg" width="200px" height="250px"><br>
+			<img src="images/poster/기생충.jpg" width="200px" height="250px"><br>
 			<span class="movie_name">기생충</span>
 		</div>
 	</div>

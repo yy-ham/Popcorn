@@ -44,8 +44,9 @@
 	%>
 	
 	<div id="page_wrapper">
-		<!-- headed -->
-		<header>
+		<!-- header -->
+		<div id="header_container">
+			<header>
 			<nav>
 				<ul id="menu_list">
 					<!-- 메인 로고 -->
@@ -57,36 +58,42 @@
 					<li id="empty">&nbsp;</li>
 					<!-- 자유게시판 아이콘 -->
 					<li class="navigation_menu">
-						<a href="#">
+						<a href="listBoard.do">
 							<button class="menu_icon" id="board_icon">자유게시판</button>
 						</a>
 					</li>
 					<!-- 회원가입 / 마이페이지 아이콘 -->
 					<li class="navigation_menu">
-						<a href="#">
-							<c:if test="${userno != null }">
+						<c:if test="${userno != null }">
+							<a href="myPage.do">
 								<button class="menu_icon" id="mypage_icon">마이페이지</button>
-							</c:if>
-							<c:if test="${userno == null }">
+							</a>
+						</c:if>
+						<c:if test="${userno == null }">
+							<a href="#">
 								<button class="menu_icon" id="join_icon">회원가입</button>
-							</c:if>
-						</a>
+							</a>
+						</c:if>
 					</li>
 					<!-- 로그인 / 로그아웃 아이콘 -->
 					<li class="navigation_menu">
-						<a href="#">
-							<input type="hidden" value="${userno }" id="userno">
-							<c:if test="${userno != null }">
+						<input type="hidden" value="${userno }" id="userno">
+						<c:if test="${userno != null }">
+							<a href="#">
 								<button class="menu_icon" id="logout_icon">로그아웃</button>
-							</c:if>
-							<c:if test="${userno == null }">
+							</a>
+						</c:if>
+						<c:if test="${userno == null }">
+							<a href="#">
 								<button class="menu_icon" id="login_icon">로그인</button>
-							</c:if>
-						</a>
+							</a>
+						</c:if>
 					</li>
 				</ul> <!-- end #menu_list -->
 			</nav>
 		</header>
+		</div>
+		
 		
 		<!-- content -->
 		<div id="content">
@@ -100,7 +107,7 @@
 				<!-- 검색창 -->
 				<div id="search_container">
 					<input type="text" id="keyword" name="keyword">
-					<a href="searchMovie.do">
+					<a href="searchMovieResult.jsp">
 						<button id="btnSearchMovie">
 							<img alt="" src="./images/icon/searchMovie_icon.png" id="searchMovie_icon">
 						</button>

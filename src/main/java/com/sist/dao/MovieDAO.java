@@ -79,7 +79,7 @@ public class MovieDAO {
 	}
 
 	//메인 페이지 - 영화 검색하기
-	/*public ArrayList<MovieVO> searchMovie(String keyword){
+	public ArrayList<MovieVO> searchMovie(String keyword){
 		ArrayList<MovieVO> list = new ArrayList<MovieVO>();
 		String sql = "select movieno, poster, movietitle from movie where movietitle like '%"+keyword+"%'";
 		Connection conn = null;
@@ -128,7 +128,7 @@ public class MovieDAO {
 		}
 		return list;
 	}
-	*/
+	
 	
 	public ArrayList<MovieVO> searchByMovietitle(String movietitle) {
 		ArrayList<MovieVO> list=null;

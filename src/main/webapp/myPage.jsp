@@ -163,7 +163,9 @@ $(function(){
 
 	<header>
 		<!-- 로고 -->
-		<a id="logo" href="mainPage.do"><img id="img" src="./images/logo.png" width="300"></a>
+		<a id="logo" href="mainPage.do">
+			<img id="img" src="./images/logo.png" width="300">
+		</a>
 		
 		<div id="logout">
 			<a href="logout.do">로그아웃</a>
