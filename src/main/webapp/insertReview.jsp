@@ -4,15 +4,22 @@
 <%@ page language="java" contentType="application/json; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	ReviewDAO reviewdao = ReviewDAO.getInstance();
 	int userno = 0;
-	int reviewno = Integer.parseInt(request.getParameter("reviewno"));
+	int reviewno = 0;
+	
 	if(request.getParameter("userno") != null){
 		userno = Integer.parseInt(request.getParameter("userno"));
 	}
+	if(request.getParameter("reviewno") != null){
+		reviewno = Integer.parseInt(request.getParameter("reviewno"));
+	}else{
+		reviewno = reviewdao.getNextReviewno();
+	}
+	
 	int movieno = Integer.parseInt(request.getParameter("movieno"));
 	String reviewcontent = request.getParameter("reviewcontent");
 
-	ReviewDAO reviewdao = ReviewDAO.getInstance();
 	ReviewVO reviewvo = new ReviewVO();
 	reviewvo.setReviewno(reviewno);
 	reviewvo.setUserno(userno);

@@ -11,46 +11,55 @@
 <body>
 	<div id="page_wrapper">
 		
-		<header>
-			<div id="main_header">
-				<nav id="main_navigation">
-					<ul>
-						<li class="navigation_menu">
+		<!-- header -->
+		<div id="header_container">
+			<header>
+				<nav>
+					<ul id="menu_list">
+						<!-- 메인 로고 -->
+						<li class="navigation_menu" id="mainlogo_li">
 							<a href="mainPage.do">
 								<img src="./images/mainlogo.png" width="300" id="mainlogo">
 							</a>
 						</li>
-						
+						<li id="empty">&nbsp;</li>
+						<!-- 자유게시판 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<button class="menu_icon">자유게시판</button>
+							<a href="listBoard.do">
+								<button class="menu_icon" id="board_icon">자유게시판</button>
 							</a>
 						</li>
+						<!-- 회원가입 / 마이페이지 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<c:if test="${userno != null }">
+							<c:if test="${userno != null }">
+								<a href="myPage.do">
 									<button class="menu_icon" id="mypage_icon">마이페이지</button>
-								</c:if>
-								<c:if test="${userno == null }">
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
 									<button class="menu_icon" id="join_icon">회원가입</button>
-								</c:if>
-							</a>
+								</a>
+							</c:if>
 						</li>
+						<!-- 로그인 / 로그아웃 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<input type="hidden" value="${userno }" id="userno">
-								<c:if test="${userno != null }">
+							<input type="hidden" value="${userno }" id="userno">
+							<c:if test="${userno != null }">
+								<a href="#">
 									<button class="menu_icon" id="logout_icon">로그아웃</button>
-								</c:if>
-								<c:if test="${userno == null }">
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
 									<button class="menu_icon" id="login_icon">로그인</button>
-								</c:if>
-							</a>
+								</a>
+							</c:if>
 						</li>
-					</ul>
+					</ul> <!-- end #menu_list -->
 				</nav>
-			</div>
-		</header>
+			</header>
+		</div> <!-- end #header_container -->
 			
 			
 		<div id="content">

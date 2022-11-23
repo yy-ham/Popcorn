@@ -1,275 +1,180 @@
+/*중앙 정렬 레이아웃 초기화*/
 * {
 	margin: 0;
 	padding: 0
 }
 
-p{
-	margin-bottom: 5px;	
-}
-
-ul{
-	list-style: none;
-	border: 5px solid pink;
-}
-li{
-	list-style: none;
-	float: left;
-	cursor: pointer;
-}
-
-.navigation_menu{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	
-}
-
-/*상단 우측 아이콘 정렬*/
-#board_icon{
-	margin-left: 600px;
-}
-
-
-header{
-	margin: 0 auto;
-	width: 1300px;
-}
-
-#main_header{
-	width: 1300px;
-}
-
-#main_logo{
-	margin: 10px;
-	padding: 10px;
-}
-
-
-#basic_info{
-	padding: 50px;
-}
-
-
-
-#g{
-	border: 2px solid black;
-	padding: 10px;
-	border-radius: 10px;
-}
-
-#page_wrapper{
+/*전체*/
+body{
 	background: rgb(243, 243, 243);
 }
 
+/*태그 선택자 설정*/
+p{
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
 
+li{
+	list-style: none;
+	float: left;
+}
+
+button{
+	cursor: pointer;
+}
 
 a{
 	text-decoration: none;
 	color: black;
+}
+
+hr{
+	margin: 20px 0;
+}
+
+
+/*상단바*/
+/*중앙 정렬*/
+header{
+	/*margin: 0 auto;*/
+	width: 1300px;
+	background: rgb(243, 243, 243);
 	
+}
+.navigation_menu{
+	margin: 20px 0;
+}
+
+/*상단 우측 아이콘 정렬*/
+#empty{
+	margin-left: 570px;
+}
+
+/*메인로고*/
+#mainlogo_li{
+	margin-left: 30px;
 }
 
 .menu_icon {
-	margin: 25px 10px 0 10px; /*위 오 아 왼*/
+	margin: 32px 10px 0 10px; /*위 오 아 왼*/
 	background: none;
 	font-size: 20px;
 	font-weight: bold;
 	padding: 5px;
 	cursor: pointer;
+	font-family: '나눔스퀘어라운드';
+	/*border: 2px solid #BF9B7A;*/
+	/*border-radius: 5px;*/
+	border: none;
+	color: #0D0D0D;
 }
 
-#b{
-	border: 3px solid blue;
-}
-
-
-
-
-#rating{
-	display: inline-block;	
-	border-width:300px;	
-	border: 3px solid black; 
-	padding: 10px;
-}
-#rating_list{
-	display: inline-block;	
-	border-width:300px;	
-	border: 3px solid red; 
-	padding: 10px;
-}
-#rating > p{
-	text-align: center;
-}
-
-
-.ratingimg{
-	margin: 0 10px;
-	margin-top: 5px;
-}
-
-
-
-#content{
-	clear: both;
+#header_container{
+	position: fixed;
+	width: 1300px;
 	margin: 0 auto;
-	width: 960px;
-	border: 5px red solid;
-	padding: 30px;
+	/*margin-left: 150px;*/
+	/*border: 5px solid red;*/
+	display: block;
+	left: 0; top: 0; right: 0;
+	background: rgb(243, 243, 243);
 }
 
-#poster_container{
-	border: 5px blue solid;
+/*body*/
+#content{
+	/*clear: both;*/
+	margin: 0 auto;
+	margin-top: 200px;
+	width: 960px;
+	border: 2px solid #BF9B7A;
+	padding: 30px;
+	border-radius: 5px;
+	display: block;
+}
+
+
+
+/* review */
+#review_container{
+	border: 4px solid #BF9B7A;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+#userinfo{
+	/*border: 3px solid red;*/
+	margin: 10px;
+	width: 400px;
 	float: left;
-	margin-top: 7px;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+#nickname{
+	display: inline-block;
+}
+
+#ratinginfo{
+	/*border: 3px solid red;*/
+	display: inline-block;
+	clear: both;
+	margin-top: 10px;
+	margin-left: 400px;
+	margin-bottom: 20px;
+}
+
+#review_content{
+	margin: 10px;
+	/*border: 3px solid red;*/
+	/*display: inline-block;*/
+	width: 700px;
+	height: 200px;
+	float: left;
+}
+#movietitle_container{
+	/*display: inline-block;*/
+	/*border: 3px solid red;*/
+	margin: 10px;
+}
+#movietitle{
+	margin: 0;
+}
+#movieinfo{
+	/*border: 3px solid red;*/
+	clear: both;
+	width: 100px;
+	height: 180px;
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	margin-left: 50px;
 }
 
 #poster{
-	display: block;
-	border: 5px yellow solid;
-	float: left;
-}
-#info_container{
-	border: 5px green solid;
-	margin-left: 200px;
-	padding: 30px;
-}
-#movietitle{
-	font-size: 30px;
-	font-weight: bold;
-}
-#info{
-	font-size: 18px;
-}
-
-#gg{
-	border: 5px solid red;
-}
-
-
-
-#detail{
-	clear: both;
-	border: 5px solid gray;
-	margin-top: 50px;
-}
-hr{
-	margin: 20px 0;
-}
-#story_info{
-	border: blue 5px solid;
-	margin-top: 10px;
-	padding: 10px;
-}
-
-#story_info > h2 {
-	margin-bottom: 10px;
-}
-#story_info > p {
+	width: 100px;
 	margin-bottom: 10px;
 }
 
-.director{
-	margin-right: 10px;
-	border: 3px solid blue;
-	width: 270px;
-}
-
-.director p{
-	text-align: center;
-}
-
-#director_list{
-	border: 5px solid red;
-	margin-top: 10px;
-	padding: 10px;
-}
-
-#director_list > h2 {
-	margin-bottom: 10px;
-}
-
-#directorimg_container{
-	border: 5px solid yellow;
-	width: 80px;
-	display: inline-block;
-	margin-right: 10px;
-}
-
-#directorimg{
-	border-radius: 5px;
-}
-
-#directorname{
-	border: 5px solid red;
-	display: inline-block;
-	width: 150px;
-}
-
-.actor{
-	display: inline-block;
-	margin-right: 10px;
-	border: 3px solid blue;
-	width: 270px;
-	margin-bottom: 10px;
-}
-
-.actor p{
-	text-align: center;
-}
-
-#actor_list{
-	border: 5px solid green;
-	margin-top: 10px;
-	padding: 10px;
-}
-
-#actor_list > h2 {
-	margin-bottom: 10px;
-}
-
-#actorimg_container{
-	border: 5px solid yellow;
-	width: 80px;
-	display: inline-block;
-	margin-right: 10px;
-}
-
-#actorimg{
-	border-radius: 5px;
-}
-
-#actorname{
-	border: 5px solid red;
-	display: inline-block;
-	width: 150px;
-}
-
-/* review */
-
-#review{
-	margin-top: 10px;
-	padding: 10px;
-	border: 5px solid blue;	
-}
-
-#review > h2 {
-	margin-bottom: 10px;
-}
-#review > p {
-	text-align: right;
-	margin-right: 10px;
-	margin-bottom: 30px;
-}
-
-.review{
-	margin-top: 50px;
-	background: gray;
+#button_container{
+	/*border: 3px solid red;*/
 	margin: 10px;
-	width: 500px;
-	height: 100px;
-	border-radius: 8px;
-	margin-bottom: 10px;
+	padding: 10px;
+	width: 155px;
+	margin-left: 790px;
+	display: inline-block;
 }
 
+#btnWriteReview{
+	border: 2px solid #D93223;
+}
+
+#btnReviewDelete{
+	border: 2px solid #D93223;
+}
+
+/*modal css*/
 .input-hidden {
   /* For Hiding Radio Button Circles */
   position: absolute;

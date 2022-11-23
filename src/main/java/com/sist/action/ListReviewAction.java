@@ -21,6 +21,7 @@ public class ListReviewAction implements SistAction {
 		ReviewRatingUserinfoDAO reviewratinguserinfodao = ReviewRatingUserinfoDAO.getInstance();
 		ArrayList<ReviewRatingUserinfoVO> review_list = reviewratinguserinfodao.findByMovieno(movieno);
 		request.setAttribute("review_list", review_list);
+		request.setAttribute("movieno", movieno);
 		
 		return "listReview.jsp";
 	}

@@ -55,85 +55,102 @@
 </head>
 <body>
 	<div id="page_wrapper">
-		<header>
-			<div id="main_header">
+	
+		<!-- header -->
+		<div id="header_container">
+			<header>
 				<nav>
 					<ul id="menu_list">
-						<li class="navigation_menu">
-							<a href="detailMovie.jsp">
+						<!-- 메인 로고 -->
+						<li class="navigation_menu" id="mainlogo_li">
+							<a href="mainPage.do">
 								<img src="./images/mainlogo.png" width="300" id="mainlogo">
 							</a>
 						</li>
-						
+						<li id="empty">&nbsp;</li>
+						<!-- 자유게시판 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
+							<a href="listBoard.do">
 								<button class="menu_icon" id="board_icon">자유게시판</button>
 							</a>
 						</li>
+						<!-- 회원가입 / 마이페이지 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<c:if test="${userno != null }">
+							<c:if test="${userno != null }">
+								<a href="myPage.do">
 									<button class="menu_icon" id="mypage_icon">마이페이지</button>
-								</c:if>
-								<c:if test="${userno == null }">
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
 									<button class="menu_icon" id="join_icon">회원가입</button>
-								</c:if>
-							</a>
+								</a>
+							</c:if>
 						</li>
+						<!-- 로그인 / 로그아웃 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<input type="hidden" value="${userno }" id="userno">
-								<c:if test="${userno != null }">
+							<input type="hidden" value="${userno }" id="userno">
+							<c:if test="${userno != null }">
+								<a href="#">
 									<button class="menu_icon" id="logout_icon">로그아웃</button>
-								</c:if>
-								<c:if test="${userno == null }">
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
 									<button class="menu_icon" id="login_icon">로그인</button>
-								</c:if>
-							</a>
+								</a>
+							</c:if>
 						</li>
-					</ul>
+					</ul> <!-- end #menu_list -->
 				</nav>
-			</div>
-		</header>
+			</header>
+		</div> <!-- end #header_container -->
+		
 		
 		
 		<div id="content">
 			<section>
 				<div id="review_container">
-					<input type="text" value="${reviewrating.reviewno }" id="reviewno_delete" name="review_delete">
+					<input type="hidden" value="${reviewrating.reviewno }" id="reviewno_delete" name="review_delete">
 					<div id="userinfo">
 						<img alt="" src="images/userimg/${reviewrating.userimg }" id="userimg" width="50" name="userimg">
 						<p id="nickname" name="nickname">${reviewrating.nickname }</p>
-					</div>
-					<div id="movieinfo">
-						<input type="text" value="${movie.movieno }" id="movieno">
-						<img alt="" src="./images/poster/${movie.poster }" id="poster" width="150" name="poster">
-						<p id="movietitle" name="movietitle">${movie.movietitle }</p>
 					</div>
 					<div id="ratinginfo">
 						<c:if test="${reviewrating.ratingcontent != null }">
 							<img alt="" src="images/icon/${reviewrating.ratingcontent }_click.png" id="rating" width="50" name="ratingcontent">
 						</c:if>
 					</div>
+					<div id="movietitle_container">
+						<a href="detailMovie.do?movieno=${movie.movieno }">
+							<b><p id="movietitle" name="movietitle">${movie.movietitle }</p></b>
+						</a>
+					</div>
+					<hr>
 					<div id="review_content">
 						<p name="reviewcontent">${reviewrating.reviewcontent }</p>
 					</div>
-					
+					<div id="movieinfo">
+						<input type="hidden" value="${movie.movieno }" id="movieno">
+						<a href="detailMovie.do?movieno=${movie.movieno }">
+							<img alt="" src="./images/poster/${movie.poster }" id="poster" width="150" name="poster">
+						</a>
+						
+					</div>
+				</div> <!-- end #review_container -->
+				<div id="button_container">
 					<c:if test="${userno == reviewrating.userno}">
 						<!-- Button to Open the Modal -->
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="btnWriteReview">
 							수정
 						</button>
-	
-						<button id="btnReviewDelete">삭제</button>				
-					
+						<button id="btnReviewDelete" class="btn">삭제</button>				
 					</c:if>
-					
-				</div>
+				</div>	
 			
 			
 			
-			<!-- 리뷰쓰기 버튼 눌렀을 때 나오는 창 -->
+		<!-- 리뷰쓰기 버튼 눌렀을 때 나오는 창 -->
 		<!-- The Modal -->
 		<div class="modal" id="myModal">
 		  <div class="modal-dialog">
@@ -159,9 +176,10 @@
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnUpdateReview">수정</button>
 		      </div>
+		      
 			</section>
-		</div>
+		</div> <!-- end #content -->
 		
-	</div>
+	</div> <!-- end #page_wrapper -->
 </body>
 </html>

@@ -7,84 +7,114 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="listReview.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$("#btn_insertReview").click(function () {
+			console.log("OK");
+			var review_data = $("#InsertReview_form").serializeArray();
+			$.ajax({
+				url: "insertReview.jsp",
+				data: review_data,
+				success: function (result) {
+					location.reload();
+				}
+			});
+		});
+	});
+</script>
 </head>
 <body>
 	<div id="page_wrapper">
-		<header>
-			<div id="main_header">
-				<nav id="main_navigation">
-					<ul>
-						<li class="navigation_menu">
+		<!-- header -->
+		<div id="header_container">
+			<header>
+				<nav>
+					<ul id="menu_list">
+						<!-- 메인 로고 -->
+						<li class="navigation_menu" id="mainlogo_li">
 							<a href="mainPage.do">
 								<img src="./images/mainlogo.png" width="300" id="mainlogo">
 							</a>
 						</li>
-						
+						<li id="empty">&nbsp;</li>
+						<!-- 자유게시판 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<button class="menu_icon">자유게시판</button>
+							<a href="listBoard.do">
+								<button class="menu_icon" id="board_icon">자유게시판</button>
 							</a>
 						</li>
+						<!-- 회원가입 / 마이페이지 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<c:if test="${userno != null }">
+							<c:if test="${userno != null }">
+								<a href="myPage.do">
 									<button class="menu_icon" id="mypage_icon">마이페이지</button>
-								</c:if>
-								<c:if test="${userno == null }">
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
 									<button class="menu_icon" id="join_icon">회원가입</button>
-								</c:if>
-							</a>
+								</a>
+							</c:if>
 						</li>
+						<!-- 로그인 / 로그아웃 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<input type="hidden" value="${userno }" id="userno">
-								<c:if test="${userno != null }">
+							<input type="hidden" value="${userno }" id="userno">
+							<c:if test="${userno != null }">
+								<a href="#">
 									<button class="menu_icon" id="logout_icon">로그아웃</button>
-								</c:if>
-								<c:if test="${userno == null }">
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
 									<button class="menu_icon" id="login_icon">로그인</button>
-								</c:if>
-							</a>
+								</a>
+							</c:if>
 						</li>
-					</ul>
+					</ul> <!-- end #menu_list -->
 				</nav>
-			</div>
-		</header>
+			</header>
+		</div> <!-- end #header_container -->
 			
 			
 		<div id="content">
 			<section>
 				<div id="insertReview">
 					<h4>리뷰쓰기</h4>
-					<form action="InsertReview.do" id="InsertReview_form">
-						<textarea rows="5" cols="100"></textarea><br>
-						<input type="submit" value="리뷰등록">
+					<form id="InsertReview_form">
+						<input type="hidden" value="${movieno }" id="movieno" name="movieno">
+						<input type="hidden" value="${userno }" id="userno" name="userno">
+						<textarea rows="5" cols="100" id="reviewcontent" name="reviewcontent"></textarea><br>
 					</form>
+					<input type="submit" value="리뷰등록" id="btn_insertReview">
 				</div>
 				
 				<hr>
 				
 				<div id="review_list">
-					<c:forEach var="review" items="${review_list }">
-						<div id="review_container">
-							<div id="userinfo">
-								<img alt="" src="./images/userimg/${review.userimg }" width="50">
-								<p>${review.nickname }</p>
-							</div>
-							
-							<div id="ratinginfo">
-								<img alt="" src="./images/icon/${review.ratingcontent }_click.png" id="rating_content" width="50">
-							</div>
-											
-							<a href="detailReview.do?reviewno=${review.reviewno }">
-								<div id="review_content">
-									${review.reviewcontent }
+						<c:forEach var="review" items="${review_list }">
+							<div id="review">
+								<input type="hidden" value="${review.reviewno }" id="reviewno">
+								<input type="hidden" value="${review.movieno }" id="movieno">
+								<div id="userinfo">
+									<img alt="" src="images/userimg/${review.userimg }" id="userimg" width="50">
+									<p id="nickname"><b>${review.nickname }</b></p>
 								</div>
-							</a>
-						</div>
-					</c:forEach>
-				</div>
-				
+								
+								<div id="review_content">
+									<a href="detailReview.do?reviewno=${review.reviewno }&movieno=${review.movieno}">
+										<p>${review.reviewcontent }</p>
+									</a>
+								</div>
+								
+								<div id="ratinginfo">
+									<c:if test="${review.ratingcontent != null }">
+										<img alt="" src="images/icon/${review.ratingcontent }_click.png" id="rating_content" width="30">
+									</c:if>
+								</div>
+							</div> <!-- end #review -->
+						</c:forEach>
+					</div> <!-- end #review_list -->
 				
 				
 				

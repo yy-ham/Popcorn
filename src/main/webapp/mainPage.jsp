@@ -24,7 +24,9 @@
 					success: function (result) {
 						$.each(result, function () {
 							var p = $("<p></p>").html(this.movietitle);
-							$("#movietitle_list").append(p);
+							var a = $("<a></a>").attr("href", "detailMovie.do?movieno="+this.movieno);
+							$(a).append(p);
+							$("#movietitle_list").append(a);
 						});
 					}
 				});

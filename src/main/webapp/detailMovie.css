@@ -301,23 +301,55 @@ input[type="checkbox"]{
 	margin-right: 10px;
 	margin-bottom: 30px;
 }
+
+/*리뷰*/
 #review{
+	margin: 0 auto;
 	background: #D9CDBF;
-	width: 500px;
+	width: 890px;
+	height: 120px;
 	border-radius: 10px;
+	margin-bottom: 20px;
 }
 
 #userinfo{
-	border: 2px solid red;
-	width: 60px;
+	/*border: 2px solid red;*/
+	width: 90px;
+	height: 80px;
+	float: left;
+	margin-top: 20px;
+	padding-left: 40px;
+	padding-top: 5px;
+	margin-right: 15px;
+}
+#nickname{
+	/*margin-left: 10px;*/
+	margin: 0;
+}
+
+#userimg{
 }
 
 #review_content{
-	border: 2px solid red;
+	/*border: 2px solid red;*/
+	display: inline-block;
+	width: 620px;
+	height: 60px;
+	margin-top: 30px;
+	padding-left: 20px;
+	padding-top: 5px;
+	margin-right: 15px;
+	float: left;
 }
 
 #ratinginfo{
-	border: 2px solid red;
+	/*border: 2px solid red;*/
+	clear: both;
+	width:30px;
+	height: 30px;
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 30px;
 }
 
 .review{
@@ -331,6 +363,7 @@ input[type="checkbox"]{
 }
 
 #review_more{
-	text-align: center;
+	margin-bottom: 50px;
+	margin-left: 450px;
 }
 

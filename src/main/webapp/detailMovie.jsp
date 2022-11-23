@@ -34,6 +34,8 @@
 		}else{
 			//리뷰 등록
 			$("#btnInsertReview").click(function () {
+				var r = $("#reviewcontent").val();
+				console.log("내용:"+r);
 				var review_data = $("#review_form").serializeArray();
 				$.ajax({
 					url: "insertReview.jsp",
@@ -255,13 +257,14 @@
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="btnWriteReview">
 					  <img alt="" src="./images/icon/insertReview_icon.png" width="30">
 					</button>
+					
 					<div id="review_list">
 						<c:forEach var="review" items="${review_list }">
 							<div id="review">
 								<input type="hidden" value="${review.reviewno } id="reviewno">
 								<div id="userinfo">
 									<img alt="" src="images/userimg/${review.userimg }" id="userimg" width="50">
-									<p><b>${review.nickname }</b></p>
+									<p id="nickname"><b>${review.nickname }</b></p>
 								</div>
 								
 								<div id="review_content">
@@ -272,15 +275,15 @@
 								
 								<div id="ratinginfo">
 									<c:if test="${review.ratingcontent != null }">
-										<img alt="" src="images/icon/${review.ratingcontent }_click.png" id="rating_content" width="50">
+										<img alt="" src="images/icon/${review.ratingcontent }_click.png" id="rating_content" width="30">
 									</c:if>
 								</div>
 							</div> <!-- end #review -->
 						</c:forEach>
 						<br><br>
-						<p>
+						<p id="review_more">
 							<a href="listReview.do?movieno=${movievo.movieno }">
-								<b id="review_more">더보기</b>
+								<b>더보기</b>
 							</a>
 						</p>
 					</div> <!-- end #review_list -->
