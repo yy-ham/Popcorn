@@ -58,6 +58,8 @@ public class UserinfoDAO {
 		return u;
 	}
 	
+	
+	
 	public int updateUserimg(int userno,String userimg){
 		String sql="update userinfo set userimg=? where userno=?";
 		Connection conn=null;

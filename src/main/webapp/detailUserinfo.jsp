@@ -147,6 +147,20 @@
 	#updatePwd{
 		
 	}
+	#infoTable td, table th {
+    	padding:15px;
+	}
+	#infoTable{
+		width:120%;
+	}
+	.confirm{
+		position:absolute;
+		bottom:10%;
+		left:47%;
+	}
+	#pwdTable td, table th {
+    	padding:3px 23px;
+	}
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
@@ -332,7 +346,7 @@ $(function(){
 			<br>
 			<br>
 			
-			<table cellpadding="20">
+			<table id="infoTable">
 				<tr>
 					<td>이름</td>
 					<td>${userinfovo.username }</td>
@@ -363,7 +377,7 @@ $(function(){
 				<hr>
 				<form id="imgForm" action="updateUserimg.do" method="post" enctype="multipart/form-data">
 					<input type="file" id="imgInput" name="imgInput" required="required"><br>
-					<input type="submit" value="확인">
+					<input class="confirm" type="submit" value="확인">
 				</form>
 			</div>
 		</article>
@@ -378,7 +392,7 @@ $(function(){
 				<br>
 				<div id="checkResult"></div>
 				<br>
-				<button id="btn_updateNicknameOK">확인</button>
+				<button class="confirm" id="btn_updateNicknameOK">확인</button>
 			</div>
 		</article>
 		
@@ -388,7 +402,7 @@ $(function(){
 				<div>&nbsp;</div>
 				<div>비밀번호 변경</div>
 				<hr>
-				<table>
+				<table id="pwdTable">
 					<tr>
 						<td>현재 비밀번호</td>
 						<td><input id="currentPwd" type="password" required="required"></td>
@@ -411,7 +425,7 @@ $(function(){
 					</tr>
 				</table>				
 				<br>
-				<button id="btn_updatePwdOK">확인</button>
+				<button class="confirm" id="btn_updatePwdOK">확인</button>
 			</div>
 		</article>
 	</section>
