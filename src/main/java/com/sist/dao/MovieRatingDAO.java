@@ -37,7 +37,7 @@ public class MovieRatingDAO {
 				+ "(select m.movieno, count(*) from movie m, rating r "
 				+ "where m.movieno = r.movieno and ratingcontent = 'good' "
 				+ "group by m.movieno order by count(*) desc) A where rownum <= 5) B "
-				+ "where m.movieno = B.movieno order by B.rnum";
+				+ "where m.movieno = B.movieno order by rownum";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

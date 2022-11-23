@@ -29,17 +29,13 @@
 				});
 			}
 		});
-		
-		
-		
-		
 	});
 </script>
 </head>
 <body>
 	<%
 		//임시 로그인
-		//session.setAttribute("userno", 1);
+		session.setAttribute("userno", 1);
 		int userno;
 		if(session.getAttribute("userno") != null){
 			userno = (Integer)(session.getAttribute("userno"));
@@ -48,49 +44,51 @@
 	%>
 	
 	<div id="page_wrapper">
-	
+		<!-- headed -->
 		<header>
-			<div id="main_header">
-				<nav>
-					<ul id="menu_list">
-						<li class="navigation_menu">
-							<a href="mainPage.do">
-								<img src="./images/mainlogo.png" width="300" id="mainlogo">
-							</a>
-						</li>
-						
-						<li class="navigation_menu">
-							<a href="#">
-								<button class="menu_icon" id="board_icon">자유게시판</button>
-							</a>
-						</li>
-						<li class="navigation_menu">
-							<a href="#">
-								<c:if test="${userno != null }">
-									<button class="menu_icon" id="mypage_icon">마이페이지</button>
-								</c:if>
-								<c:if test="${userno == null }">
-									<button class="menu_icon" id="join_icon">회원가입</button>
-								</c:if>
-							</a>
-						</li>
-						<li class="navigation_menu">
-							<a href="#">
-								<input type="hidden" value="${userno }" id="userno">
-								<c:if test="${userno != null }">
-									<button class="menu_icon" id="logout_icon">로그아웃</button>
-								</c:if>
-								<c:if test="${userno == null }">
-									<button class="menu_icon" id="login_icon">로그인</button>
-								</c:if>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div> <!-- end #main_header -->
+			<nav>
+				<ul id="menu_list">
+					<!-- 메인 로고 -->
+					<li class="navigation_menu" id="mainlogo_li">
+						<a href="mainPage.do">
+							<img src="./images/mainlogo.png" width="300" id="mainlogo">
+						</a>
+					</li>
+					<li id="empty">&nbsp;</li>
+					<!-- 자유게시판 아이콘 -->
+					<li class="navigation_menu">
+						<a href="#">
+							<button class="menu_icon" id="board_icon">자유게시판</button>
+						</a>
+					</li>
+					<!-- 회원가입 / 마이페이지 아이콘 -->
+					<li class="navigation_menu">
+						<a href="#">
+							<c:if test="${userno != null }">
+								<button class="menu_icon" id="mypage_icon">마이페이지</button>
+							</c:if>
+							<c:if test="${userno == null }">
+								<button class="menu_icon" id="join_icon">회원가입</button>
+							</c:if>
+						</a>
+					</li>
+					<!-- 로그인 / 로그아웃 아이콘 -->
+					<li class="navigation_menu">
+						<a href="#">
+							<input type="hidden" value="${userno }" id="userno">
+							<c:if test="${userno != null }">
+								<button class="menu_icon" id="logout_icon">로그아웃</button>
+							</c:if>
+							<c:if test="${userno == null }">
+								<button class="menu_icon" id="login_icon">로그인</button>
+							</c:if>
+						</a>
+					</li>
+				</ul> <!-- end #menu_list -->
+			</nav>
 		</header>
 		
-		
+		<!-- content -->
 		<div id="content">
 			<section>
 				<!-- 메인이미지 -->
@@ -99,7 +97,6 @@
 						<img alt="" src="./images/mainimg/${mainimg }" id="mainimg">
 					</a>
 				</div>
-				
 				<!-- 검색창 -->
 				<div id="search_container">
 					<input type="text" id="keyword" name="keyword">
@@ -108,15 +105,14 @@
 							<img alt="" src="./images/icon/searchMovie_icon.png" id="searchMovie_icon">
 						</button>
 					</a>
-					<div id="movietitle_list">
-						
-					</div>
+					<!-- 자동 추천 검색어 리스트 -->
+					<div id="movietitle_list"></div>
 				</div>
-				
 				<!-- 컬렉션 -->
 				<div id="collection_container">
+					<!-- 최신영화 컬렉션 -->
 					<div id="latestMovie_list">
-						<h2>최신 영화</h2>
+						<h2 class="collection_title">최신 영화</h2>
 						<c:forEach var="latestMovie" items="${latestMovie_list }">
 							<div class="latestMovie">
 								<a href="detailMovie.do?movieno=${latestMovie.movieno }">
@@ -128,10 +124,9 @@
 							</div>
 						</c:forEach>
 					</div> <!-- end #latestMovie_list -->
-					
-					
+					<!-- 좋아요 많이 받은 영화 top5 컬렉션 -->
 					<div id="popularMovie_list">
-						<h2>좋아요 많이 받은 영화</h2>
+						<h2 class="collection_title">좋아요 많이 받은 영화</h2>
 						<c:forEach var="popularMovie" items="${popularMovie_list }">
 							<div class="popularMovie">
 								<a href="detailMovie.do?movieno=${popularMovie. movieno }">
@@ -144,10 +139,9 @@
 							</div>
 						</c:forEach>
 					</div> <!-- end #popularMovie_list -->
-					
-					
+					<!-- 영화제 수상작 컬렉션 -->
 					<div id="awardWinningMovie_list">
-						<h2>영화제 수상작</h2>
+						<h2 class="collection_title">영화제 수상작</h2>
 						<c:forEach var="awardWinningMovie" items="${awardWinningMovie_list }">
 							<div class="awardWinningMovie">
 								<a href="detailMovie.do?movieno=${awardWinningMovie.movieno }">
@@ -162,7 +156,6 @@
 				</div> <!-- end #collection_container -->
 			</section>
 		</div> <!-- end #content -->
-	
 	</div> <!-- end #page_wrapper -->
 </body>
 </html>

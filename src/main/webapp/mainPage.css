@@ -1,150 +1,149 @@
+/*중앙 정렬 레이아웃 초기화*/
 * {
 	margin: 0;
 	padding: 0
 }
 
-p{
-	margin-bottom: 5px;	
-}
-
-ul{
-	list-style: none;
-	border: 5px solid pink;
-}
-li{
-	list-style: none;
-	float: left;
-	cursor: pointer;
-}
-
-.navigation_menu{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	
-}
-
-/*상단 우측 아이콘 정렬*/
-#board_icon{
-	margin-left: 600px;
-}
-
-header{
-	margin: 0 auto;
-	width: 1300px;
-}
-
-#main_header{
-	width: 1300px;
-}
-
-#main_logo{
-	margin: 10px;
-	padding: 10px;
-}
-
-
+/*전체*/
 #page_wrapper{
 	background: rgb(243, 243, 243);
 }
 
+/*태그 선택자 설정*/
+p{
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
 
+li{
+	list-style: none;
+	float: left;
+}
+
+button{
+	cursor: pointer;
+}
 
 a{
 	text-decoration: none;
 	color: black;
-	
-}
-
-.menu_icon {
-	margin: 25px 10px 0 10px; /*위 오 아 왼*/
-	background: none;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 5px;
-	cursor: pointer;
-}
-
-
-
-#content{
-	clear: both;
-	margin: 0 auto;
-	width: 960px;
-	border: 5px red solid;
-	padding: 30px;
-}
-
-#mainimg_container{
-	border: 5px solid blue;
-	margin-bottom: 100px;
-}
-
-#mainimg{
-	margin-left: 35px;
-}
-
-#search_container{
-	border: 5px solid blue;
-	margin-bottom: 50px;
-	height: 60px;
-}
-
-/*검색창*/
-#keyword{
-	width: 300px;
-	height: 40px;
-	margin-left: 300px;
-	border-radius: 10px;
-	margin-top: 5px;
-}
-
-#btnSearchMovie{
-	float: right;
-	border: white;
-	cursor: pointer;
-	height: 40px;
-	margin-right: 300px;
-	margin-top: 7px;
-	background: rgb(243, 243, 243);
-}
-
-#searchMovie_icon{
-	width: 30px;
-	padding: 5px;
-	background: rgb(243, 243, 243);
 }
 
 hr{
 	margin: 20px 0;
 }
 
+
+/*상단바*/
+/*중앙 정렬*/
+header{
+	margin: 0 auto;
+	width: 1300px;
+}
+.navigation_menu{
+	margin: 20px 0;
+}
+
+/*상단 우측 아이콘 정렬*/
+#empty{
+	margin-left: 570px;
+}
+
+/*메인로고*/
+#mainlogo_li{
+	margin-left: 30px;
+}
+
+.menu_icon {
+	margin: 32px 10px 0 10px; /*위 오 아 왼*/
+	background: none;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+	cursor: pointer;
+	font-family: '나눔스퀘어라운드';
+	/*border: 2px solid #BF9B7A;*/
+	/*border-radius: 5px;*/
+	border: none;
+	color: #0D0D0D;
+}
+
+
+/*body*/
+#content{
+	clear: both;
+	margin: 0 auto;
+	width: 960px;
+	border: 2px solid #BF9B7A;
+	padding: 30px;
+	border-radius: 5px;
+}
+
+
+/*메인 이미지*/
+#mainimg_container{
+	margin-top: 30px;
+	margin-bottom: 70px;
+}
+
+#mainimg{
+	margin-left: 35px;
+}
+
+
+/*검색창*/
+#search_container{
+	margin-bottom: 70px;
+	height: 60px;
+}
+
+#keyword{
+	width: 300px;
+	height: 40px;
+	margin-left: 300px;
+	border-radius: 10px;
+	margin-top: 5px;
+	border: 3px solid #BF9B7A;
+}
+/*검색 돋보기 버튼*/
+#btnSearchMovie{
+	float: right;
+	border: none;
+	cursor: pointer;
+	height: 40px;
+	margin-right: 300px;
+	margin-top: 7px;
+	background: none;
+}
+
+#searchMovie_icon{
+	width: 30px;
+	padding: 5px;
+	background: none;
+}
+
+/*메인 페이지 - 자동 추천 검색어 리스트*/
+#movietitle_list{
+	width: 300px;
+	margin-left: 300px;
+	background: white;
+	border-radius: 10px;
+}
+
+
+/*컬렉션*/
 #collection_container{
-	border: 5px solid blue;
+	border: 2px solid #BF9B7A;
+	padding-left: 35px;
+	border-radius: 5px;
 }
 
-#latestMovie_list{
-	border: 5px solid red;
-	margin: 30px 0;
-	
-}
-
-#popularMovie_list{
-	border: 5px solid red;
-	margin: 30px 0;
-}
-
-#awardWinningMovie_list{
-	border: 5px solid red;
-	margin: 30px 0;
-}
-
-h2{
+.collection_title{
 	margin: 10px 0;
+	margin-left: 8px;
 }
 
-p{
-	margin-left: 10px;
-}
+/*컬렉션 포스터*/
 .poster{
 	width: 150px;
 	margin-left: 10px;
@@ -152,17 +151,25 @@ p{
 	margin-bottom: 10px;
 	z-index: 50;
 }
+
+/*최신영화*/
+#latestMovie_list{
+	margin: 30px 0;
+}
+
 .latestMovie{
-	border: 5px solid blue;
 	width: 170px;
 	height: 300px;
 	display: inline-block;
 	margin-right: 3px;
-	
+}
+
+/*인기 영화*/
+#popularMovie_list{
+	margin: 30px 0;
 }
 
 .popularMovie{
-	border: 5px solid blue;
 	width: 170px;
 	height: 300px;
 	display: inline-block;
@@ -170,7 +177,7 @@ p{
 	position: relative;
 }
 
-
+/*순위박스*/
 #ranking{
 	left: 10px;
 	width: 30px;	
@@ -178,7 +185,6 @@ p{
 	background: rgb(114, 114, 114);
 	color: white;
 	z-index: 100;
-	border: 2px solid blue;
 	border-radius: 10px;
 	margin-right: 10px;
 	margin-top: 10px;
@@ -187,18 +193,14 @@ p{
 	padding-top: 5px;
 }
 
+/*영화제 수상작*/
+#awardWinningMovie_list{
+	margin: 30px 0;
+}
+
 .awardWinningMovie{
-	border: 5px solid blue;
 	width: 170px;
 	height: 300px;
 	display: inline-block;
 	margin-right: 3px;
-}
-
-#movietitle_list{
-	border: 3px solid red;
-	width: 300px;
-	margin-left: 300px;
-	background: white;
-	border-radius: 10px;
 }

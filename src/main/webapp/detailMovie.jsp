@@ -10,10 +10,8 @@
 <link rel="stylesheet" type="text/css" href="bootstrap2.css">
 <link rel="stylesheet" type="text/css" href="detailMovie.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script type="text/javascript" src="detailMovie.js"></script>
 <!-- Popper JS -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript">
@@ -111,11 +109,6 @@
 			});
 		}
 		
-		
-		
-		
-		
-		
 	});
 </script>
 </head>
@@ -131,102 +124,96 @@
 
 	<!-- 상단바 -->
 	<div id="page_wrapper">
+		<!-- headed -->
 		<header>
-			<div id="main_header">
-				<nav>
-					<ul id="menu_list">
-						<li class="navigation_menu">
-							<a href="mainPage.do">
-								<img src="./images/mainlogo.png" width="300" id="mainlogo">
-							</a>
-						</li>
-						
-						<li class="navigation_menu">
-							<a href="#">
-								<button class="menu_icon" id="board_icon">자유게시판</button>
-							</a>
-						</li>
-						<li class="navigation_menu">
-							<a href="#">
-								<c:if test="${userno != null }">
-									<button class="menu_icon" id="mypage_icon">마이페이지</button>
-								</c:if>
-								<c:if test="${userno == null }">
-									<button class="menu_icon" id="join_icon">회원가입</button>
-								</c:if>
-							</a>
-						</li>
-						<li class="navigation_menu">
-							<a href="#">
-								<input type="hidden" value="${userno }" id="userno">
-								<c:if test="${userno != null }">
-									<button class="menu_icon" id="logout_icon">로그아웃</button>
-								</c:if>
-								<c:if test="${userno == null }">
-									<button class="menu_icon" id="login_icon">로그인</button>
-								</c:if>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+			<nav>
+				<ul id="menu_list">
+					<!-- 메인 로고 -->
+					<li class="navigation_menu" id="mainlogo_li">
+						<a href="mainPage.do">
+							<img src="./images/mainlogo.png" width="300" id="mainlogo">
+						</a>
+					</li>
+					<li id="empty">&nbsp;</li>
+					<!-- 자유게시판 아이콘 -->
+					<li class="navigation_menu">
+						<a href="#">
+							<button class="menu_icon" id="board_icon">자유게시판</button>
+						</a>
+					</li>
+					<!-- 회원가입 / 마이페이지 아이콘 -->
+					<li class="navigation_menu">
+						<a href="#">
+							<c:if test="${userno != null }">
+								<button class="menu_icon" id="mypage_icon">마이페이지</button>
+							</c:if>
+							<c:if test="${userno == null }">
+								<button class="menu_icon" id="join_icon">회원가입</button>
+							</c:if>
+						</a>
+					</li>
+					<!-- 로그인 / 로그아웃 아이콘 -->
+					<li class="navigation_menu">
+						<a href="#">
+							<input type="hidden" value="${userno }" id="userno">
+							<c:if test="${userno != null }">
+								<button class="menu_icon" id="logout_icon">로그아웃</button>
+							</c:if>
+							<c:if test="${userno == null }">
+								<button class="menu_icon" id="login_icon">로그인</button>
+							</c:if>
+						</a>
+					</li>
+				</ul> <!-- end #menu_list -->
+			</nav>
 		</header>
 		
-				
+		<!-- content -->
 		<div id="content">
-			<!-- 본문 -->
 			<section>
-				<div id="g">				
-					<div id="gg">
-						<div id="poster_container">
-							<img src="./images/poster/${movievo.poster }" height="250" id="poster">
-						</div>
-						
-						<div id="info_container">
-							<input type="hidden" value="${movievo.movieno }" id="movieno">
-							<p id="movietitle">${movievo.movietitle }</p>
-							<p id="info">${movievo.releasedate } | ${movievo.country } | ${movievo.genre } | ${movievo.runningtime }분 | ${movievo.agelimit }</p>
-							<div id="rating">
-								<p><b>평가하기</b></p>
-								<form id="rating_form">
-									<input type="checkbox" id="btn_good" name="item" value="good" class="btnRating"/>
-							      	<label for="btn_good">
-							        	<img src="./images/icon/good_default.png" style="width:50px;" id="good"/>
-							      	</label>
-							      	&nbsp;&nbsp;
-							      	<input type="checkbox" id="btn_fair" name="item" value="fair" class="btnRating"/>
-							      	<label for="btn_fair">
-							        	<img src="images/icon/fair_default.png" style="width:50px;" id="fair" />
-							      	</label>
-									&nbsp;&nbsp;
-							      	<input type="checkbox" id="btn_bad" name="item" value="bad" class="btnRating"/>
-							      	<label for="btn_bad">
-							        	<img src="images/icon/bad_default.png" style="width:50px;" id="bad"/>
-							      	</label>
-								</form>
-								
-							</div>
-								
-							
-						</div>
-						
+				<div id="top_container">
+					<!-- 포스터 -->
+					<div id="poster_container">
+						<img src="./images/poster/${movievo.poster }" height="250" id="poster">
 					</div>
-					
-			
-					<div id="detail">
-						<div id="story_info">
-							<h2>기본정보</h2>
-							<p><b>${movievo.releasedate } | ${movievo.country } | ${movievo.genre } | ${movievo.runningtime }분 | ${movievo.agelimit }</b></p>
-							<p>${movievo.story }</p>
-						</div>
-							
-						<hr>
-						
-						<div id="director_list">
-							<h2>제작</h2>
+					<!-- 포스터 옆에 나오는 정보, 평가 버튼 -->
+					<div id="info_container">
+						<input type="hidden" value="${movievo.movieno }" id="movieno">
+						<p id="movietitle">${movievo.movietitle }</p>
+						<p id="info">${movievo.releasedate } | ${movievo.country } | ${movievo.genre } | ${movievo.runningtime }분 | ${movievo.agelimit }</p>
+						<div id="rating_container">
+							<p><b>평가하기</b></p>
+							<div id="r">
+								<input type="checkbox" id="btn_good" value="good" class="btnRating"/>
+						      	<label for="btn_good">
+						        	<img src="./images/icon/good_default.png" style="width:50px;" id="good"/>
+						      	</label>
+						      	&nbsp;&nbsp;
+						      	<input type="checkbox" id="btn_fair" value="fair" class="btnRating"/>
+						      	<label for="btn_fair">
+						        	<img src="images/icon/fair_default.png" style="width:50px;" id="fair" />
+						      	</label>
+								&nbsp;&nbsp;
+						      	<input type="checkbox" id="btn_bad" value="bad" class="btnRating"/>
+						      	<label for="btn_bad">
+						        	<img src="images/icon/bad_default.png" style="width:50px;" id="bad"/>
+						      	</label>
+							</div>
+						</div> <!-- end #rating -->
+					</div> <!-- end #info_container -->
+				</div> <!-- end #top_container -->
+				<div id="detail_container">
+					<div id="story_info">
+						<h2>기본정보</h2>
+						<p><b>${movievo.releasedate } | ${movievo.country } | ${movievo.genre } | ${movievo.runningtime }분 | ${movievo.agelimit }</b></p>
+						<p>${movievo.story }</p>
+					</div>
+					<hr>
+					<div id="director_list">
+						<h2>제작</h2>
+						<div class="director">
 							<a href="detailDirector.do?directorno=${directorcastvo.directorno }">
-							<div class="director">
-								<input type="hidden" value="" id="directorno">
+								<input type="hidden" value="${directorcastvo.directorno }" id="directorno">
 								<div id="directorimg_container">
 									<img alt="" src="./images/directorimg/${directorcastvo.directorimg }" id="directorimg" width="80">
 								</div>
@@ -234,82 +221,66 @@
 									<p><b>${directorcastvo.directorname }</b></p>
 									<p>${directorcastvo.position }</p>
 								</div>
-							</div>
 							</a>
 						</div>
-						
-						<hr>
-						
-						<div id="actor_list">
-							<h2>출연</h2>
-								<c:forEach var="actor" items="${actor_list }">
-									<a href="detailActor.do?actorno=${actor.actorno }">
-									<div class="actor">
-										<input type="hidden" value="${actor.movieno }" id="movieno">
-										<div id="actorimg_container">
-											<img alt="" src="./images/actorimg/${actor.actorimg }" id="actorimg" width="80">
-										</div>
-										<div id="actorname">
-											<p><b>${actor.actorname }</b></p>
-											<p>${actor.position} | ${actor.role }</p>
-										</div>
-									</div>
-									</a>
-								</c:forEach>
-								
-						</div> <!-- end #actor_list -->
-						
-					</div> <!-- end #detail -->
-					
+					</div><!-- end #director_list -->
 					<hr>
-					
-					<div id="review">
-						<h2>리뷰</h2>
-						
-						<!-- Button to Open the Modal -->
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="btnWriteReview">
-						  <img alt="" src="./images/icon/insertReview_icon.png" width="40">
-						</button>
-						
-						
-						<div id="review_list">
-							<c:forEach var="review" items="${review_list }">
-								<div id="review_container">
-									<input type="hidden" value="${review.reviewno } id="reviewno">
-									<div id="userinfo">
-										<img alt="" src="images/userimg/${review.userimg }" id="userimg" width="50">
-										<p><b>${review.nickname }</b></p>
+					<div id="actor_list">
+						<h2>출연</h2>
+						<c:forEach var="actor" items="${actor_list }">
+							<div class="actor">
+								<a href="detailActor.do?actorno=${actor.actorno }">
+									<input type="hidden" value="${actor.movieno }" id="movieno">
+									<div id="actorimg_container">
+										<img alt="" src="./images/actorimg/${actor.actorimg }" id="actorimg" width="80">
 									</div>
-									
-									<div id="review_content">
-										<a href="detailReview.do?reviewno=${review.reviewno }&movieno=${movievo.movieno}">
-											<p>${review.reviewcontent }</p>
-										</a>
+									<div id="actorname">
+										<p><b>${actor.actorname }</b></p>
+										<p>${actor.position} | ${actor.role }</p>
 									</div>
-									
-									<div id="ratinginfo">
-										<c:if test="${review.ratingcontent != null }">
-											<img alt="" src="images/icon/${review.ratingcontent }_click.png" id="rating_content" width="50">
-										</c:if>
-									</div>
-								</div> <!-- end #review_container -->
-							</c:forEach>
-							<br><br>
-							<p>
-								<a href="listReview.do?movieno=${movievo.movieno }">
-									<b id="review_more">더보기</b>
 								</a>
-							</p>
+							</div>
+						</c:forEach>
+					</div> <!-- end #actor_list -->
+				</div> <!-- end #detail_container -->
+				<div id="review_container">
+					<h2>리뷰</h2>
+					<!-- 리뷰 등록, Button to Open the Modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="btnWriteReview">
+					  <img alt="" src="./images/icon/insertReview_icon.png" width="40">
+					</button>
+					<div id="review_list">
+						<c:forEach var="review" items="${review_list }">
+							<div id="review">
+								<input type="hidden" value="${review.reviewno } id="reviewno">
+								<div id="userinfo">
+									<img alt="" src="images/userimg/${review.userimg }" id="userimg" width="50">
+									<p><b>${review.nickname }</b></p>
+								</div>
 								
-						</div> <!-- end #review_list -->
-						
-						
-						
-					</div> <!-- end #review -->
+								<div id="review_content">
+									<a href="detailReview.do?reviewno=${review.reviewno }&movieno=${movievo.movieno}">
+										<p>${review.reviewcontent }</p>
+									</a>
+								</div>
+								
+								<div id="ratinginfo">
+									<c:if test="${review.ratingcontent != null }">
+										<img alt="" src="images/icon/${review.ratingcontent }_click.png" id="rating_content" width="50">
+									</c:if>
+								</div>
+							</div> <!-- end #review_container -->
+						</c:forEach>
+						<br><br>
+						<p>
+							<a href="listReview.do?movieno=${movievo.movieno }">
+								<b id="review_more">더보기</b>
+							</a>
+						</p>
+					</div> <!-- end #review_list -->
+				</div> <!-- end #review_container -->
 				
-				</div> <!-- end #g -->
 			</section>
-		
 		</div> <!-- end #content -->
 		
 		
