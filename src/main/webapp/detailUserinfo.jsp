@@ -238,17 +238,17 @@ $(function(){
 	//비밀번호 일치 확인
 	$("#newPwdRe").keyup(function(){
 		if($("#newPwd").val()!=$("#newPwdRe").val()){
-			$("#checkPwd").html("비밀번호가 일치하지 않습니다.")
+			$("#checkPwd").html("비밀번호가 일치하지 않습니다.").css("color","red");
 		}
 		if($("#newPwd").val()==$("#newPwdRe").val()){
-			$("#checkPwd").html("")
+			$("#checkPwd").html("비밀번호가 일치합니다.").css("color","blue");
 		}
 		$("#newPwd").keyup(function(){
 			if($("#newPwd").val()!=$("#newPwdRe").val()){
-				$("#checkPwd").html("비밀번호가 일치하지 않습니다.")
+				$("#checkPwd").html("비밀번호가 일치하지 않습니다.").css("color","red");
 			}
 			if($("#newPwd").val()==$("#newPwdRe").val()){
-				$("#checkPwd").html("")
+				$("#checkPwd").html("비밀번호가 일치합니다.").css("color","blue");
 			}
 		})
 	})

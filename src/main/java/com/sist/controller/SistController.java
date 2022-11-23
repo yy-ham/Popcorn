@@ -70,6 +70,7 @@ public class SistController extends HttpServlet {
 		String view = "";
 		
 		action = map.get(cmd);
+		System.out.println("action: "+action);
 		view = action.pro(request, response);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
