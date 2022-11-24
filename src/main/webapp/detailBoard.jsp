@@ -430,7 +430,7 @@ header{
 								</a>
 							</c:if>
 							<c:if test="${userno == null }">
-								<a href="#">
+								<a href="insertUserinfo.jsp">
 									<button class="menu_icon" id="join_icon">회원가입</button>
 								</a>
 							</c:if>
@@ -439,12 +439,12 @@ header{
 						<li class="navigation_menu">
 							<input type="hidden" value="${userno }" id="userno">
 							<c:if test="${userno != null }">
-								<a href="#">
+								<a href="logout.do">
 									<button class="menu_icon" id="logout_icon">로그아웃</button>
 								</a>
 							</c:if>
 							<c:if test="${userno == null }">
-								<a href="#">
+								<a href="login.jsp">
 									<button class="menu_icon" id="login_icon">로그인</button>
 								</a>
 							</c:if>

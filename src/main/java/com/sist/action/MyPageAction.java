@@ -24,12 +24,12 @@ public class MyPageAction implements SistAction {
 		
 		//세션에서 userno 가져오기
 		HttpSession session = request.getSession();
-		session.setAttribute("userno", 1);	//나중에 수정
+		//session.setAttribute("userno", 1);	//나중에 수정
 		
 		//로그인 정보 없을 경우
 		if(session.getAttribute("userno")==null) {
 			//로그인 페이지로 보내기
-			return "login.do";
+			return "login.jsp";
 		}else {
 			//세션에서 userno 가져오기
 			int userno=Integer.parseInt(session.getAttribute("userno")+"");

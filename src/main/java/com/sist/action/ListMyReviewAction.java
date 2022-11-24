@@ -23,7 +23,7 @@ public class ListMyReviewAction implements SistAction {
 		
 		//로그인 정보 없을 경우
 		if(session.getAttribute("userno")==null) {
-			return "login.do";
+			return "login.jsp";
 		}else {
 			int userno=Integer.parseInt(session.getAttribute("userno")+"");
 			

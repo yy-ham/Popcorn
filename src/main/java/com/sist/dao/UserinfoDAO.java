@@ -26,6 +26,32 @@ public class UserinfoDAO {
 	}
 	private UserinfoDAO() {}
 	
+	public int checkLogin(String email,String password) {
+		int userno=-1;
+		String sql="select userno from userinfo where email='"+email+"' and pwd='"+password+"'";
+		Connection conn=null;
+		Statement stmt=null;
+		ResultSet rs=null;
+		
+		try {
+			Context context=new InitialContext();
+			DataSource ds=(DataSource) context.lookup("java:/comp/env/mydb");
+			conn=ds.getConnection();
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql);
+			if(rs.next()) {
+				userno=rs.getInt("userno");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) {try {rs.close();} catch (SQLException e) {e.printStackTrace();}} 
+			if(stmt!=null) {try {stmt.close();} catch (SQLException e) {e.printStackTrace();}}
+			if(conn!=null) {try {conn.close();} catch (SQLException e) {e.printStackTrace();}}
+		}
+		return userno;
+	}
+	
 	public UserinfoVO findByUserno(int userno){
 		UserinfoVO u=null;
 		String sql="select * from userinfo where userno="+userno;

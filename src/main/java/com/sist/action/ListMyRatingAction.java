@@ -16,12 +16,14 @@ public class ListMyRatingAction implements SistAction {
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
+		
+		System.out.println("userno in ListMyRating after logout: "+session.getAttribute("userno"));
 		
 		//로그인 정보 없을 경우
 		if(session.getAttribute("userno")==null) {
 			//로그인 페이지로 보내기
-			return "login.do";
+			return "login.jsp";
 		}else {
 			//세션에서 userno 가져오기
 			int userno=Integer.parseInt(session.getAttribute("userno")+"");

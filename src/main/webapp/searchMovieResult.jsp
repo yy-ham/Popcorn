@@ -106,7 +106,7 @@ header{
 }
 	
 	#type_moviename{
-		border: 2px solid yellow;
+		/*border: 2px solid yellow;*/
 	}
 	
 	#insert{
@@ -190,7 +190,7 @@ header{
 							var span2 = $("<span></span>").html("연령제한 : "+this.agelimit).addClass("movie_name");
 							var span3 = $("<span></span>").html("장르 : "+this.genre).addClass("movie_name");
 							$(div).append(img,br,span,span2,span3);
-							var a = $("<a></a>").append(div).attr("href", "detail.do?movieno="+this.movieno);
+							var a = $("<a></a>").append(div).attr("href", "detailMovie.do?movieno="+this.movieno);
 							$("#list").append(a);
 								
 							})
@@ -251,7 +251,7 @@ header{
 								</a>
 							</c:if>
 							<c:if test="${userno == null }">
-								<a href="#">
+								<a href="insertUserinfo.jsp">
 									<button class="menu_icon" id="join_icon">회원가입</button>
 								</a>
 							</c:if>
@@ -260,12 +260,12 @@ header{
 						<li class="navigation_menu">
 							<input type="hidden" value="${userno }" id="userno">
 							<c:if test="${userno != null }">
-								<a href="#">
+								<a href="logout.do">
 									<button class="menu_icon" id="logout_icon">로그아웃</button>
 								</a>
 							</c:if>
 							<c:if test="${userno == null }">
-								<a href="#">
+								<a href="login.jsp">
 									<button class="menu_icon" id="login_icon">로그인</button>
 								</a>
 							</c:if>
@@ -287,16 +287,9 @@ header{
 		</div>
 		<hr>
 		<div id="list">
-			<div id="list_inner">
-				<img src="images/poster/기생충.jpg" width="200px" height="250px" id="poster"><br>
-				<span class="movie_name">기생충</span>
+			
 		</div>
-		<div id="list">
-			<div id="list_inner">
-				<img src="images/poster/5_기생충_poster.jpg" width="200px" height="250px"><br>
-				<span class="movie_name">기생충</span>
-			</div>
-		</div>
+		
 	</div>
 </body>
 </html>

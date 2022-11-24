@@ -106,7 +106,7 @@
 	}
 	.updateWindow{
 		width:400px;
-		height:250px;
+		height:350px;
 		margin-left:-200px;
 		margin-top:-125px;
 		display:none;
@@ -165,6 +165,10 @@
 	#nicknameAndBtn{
 		position:absolute;
 		left:25%;
+	}
+	
+	#checkPwd{
+		font-size:12px;
 	}
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -317,7 +321,7 @@ $(function(){
 							</a>
 						</c:if>
 						<c:if test="${userno == null }">
-							<a href="#">
+							<a href="insertUserinfo.jsp">
 								<button class="menu_icon" id="join_icon">회원가입</button>
 							</a>
 						</c:if>
@@ -326,12 +330,12 @@ $(function(){
 					<li class="navigation_menu">
 						<input type="hidden" value="${userno }" id="userno">
 						<c:if test="${userno != null }">
-							<a href="#">
+							<a href="logout.do">
 								<button class="menu_icon" id="logout_icon">로그아웃</button>
 							</a>
 						</c:if>
 						<c:if test="${userno == null }">
-							<a href="#">
+							<a href="login.jsp">
 								<button class="menu_icon" id="login_icon">로그인</button>
 							</a>
 						</c:if>
