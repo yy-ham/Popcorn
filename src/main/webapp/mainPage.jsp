@@ -28,6 +28,7 @@
 					url: "searchMovie.jsp",
 					data: {keyword: keyword},
 					success: function (result) {
+						$("#movietitle_list").empty();
 						$.each(result, function () {
 							var p = $("<p></p>").html(this.movietitle);
 							var a = $("<a></a>").attr("href", "detailMovie.do?movieno="+this.movieno);
