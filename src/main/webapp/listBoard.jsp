@@ -109,6 +109,8 @@
 		display: block;
 		left: 0; top: 0; right: 0;
 		border-bottom:1px solid #D9CDBF;
+		background: rgb(243, 243, 243);
+		z-index: 50;
 	}
 	
 	#board_container{

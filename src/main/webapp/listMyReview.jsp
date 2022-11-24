@@ -131,13 +131,6 @@
 		overflow:hidden;
 		text-overflow:ellipsis;
 	}
-	.edit{
-		float:right;
-	}
-	.del{
-		float:right;
-		display:none;
-	}
 	#titleEditContents{
 		width:600px;
 	}
@@ -268,8 +261,6 @@ $(function(){
 						<div class="reviewElements" id="titleEditContents">
 							<div class="reviewElementsLower" id="titleAndEdit">
 								<a href="detailMovie.do?movieno=${re.movieno }">${re.movietitle }</a>
-								<a href="#" class="del">&nbsp;&nbsp;삭제</a>
-								<a href="#" class="edit">수정</a>
 							</div>
 							<div class="reviewElementsLower">
 								<c:if test="${re.ratingcontent =='good'}">
@@ -282,7 +273,7 @@ $(function(){
 									<img src="./images/icon/bad_click.png" width="30">
 								</c:if>
 							</div>
-							<div class="reviewElementsLower" id="reviewcontent">${re.reviewcontent }</div>
+							<a href="detailReview.do?reviewno=${re.reviewno }&movieno=${re.movieno }" class="reviewElementsLower" id="reviewcontent">${re.reviewcontent }</a>
 						</div>
 						<div class="reviewno">${re.reviewno }</div>
 					</li>

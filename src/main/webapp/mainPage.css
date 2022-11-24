@@ -80,7 +80,7 @@ header{
 	display: block;
 	left: 0; top: 0; right: 0;
 	background: rgb(243, 243, 243);
-	z-index: 50;
+	z-index: 100;
 	border-bottom:1px solid #D9CDBF;
 }
 
@@ -95,6 +95,7 @@ header{
 	padding: 30px;
 	border-radius: 5px;
 	display: block;
+	margin-bottom: 50px;
 }
 
 
@@ -202,7 +203,7 @@ header{
 	height: 30px;
 	background: rgb(114, 114, 114);
 	color: white;
-	z-index: 100;
+	z-index: 30;
 	border-radius: 10px;
 	margin-right: 10px;
 	margin-top: 10px;
