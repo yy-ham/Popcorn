@@ -73,25 +73,28 @@
 				</div>
 				<hr>
 				<div id="movie_list">
-					<div id="list_head">
-						<div class="list_title">포스터</div>
-						<div class="list_title">제목</div>
-						<div class="list_title">개봉연도</div>
-						<div class="list_title">장르</div>
-						<div class="list_title">역할</div>
-					</div>
+					<ul id="list_head">
+						<li class="list_title">포스터</li>
+						<li class="list_title">제목</li>
+						<li class="list_title">개봉일</li>
+						<li class="list_title">장르</li>
+						<li class="list_title">역할</li>
+					</ul>
+				</div> <!-- end #movie_list -->
 					
 					<div id="list_body">
 						<c:forEach var="director_movie" items="${director_movie }">
 							<a href="detailMovie.do?movieno=${director_movie.movieno }">
 								<div class="movie_container">
-									<div>
-										<img alt="" src="./images/poster/${director_movie.poster }" id="poster">
-									</div>
-									<div>${director_movie.movietitle }</div>
-									<div>${director_movie.releasedate }</div>
-									<div>${director_movie.genre }</div>
-									<div>${director_movie.position }</div>
+									<ul>
+										<li class="list_content">
+											<img alt="" src="./images/poster/${director_movie.poster }" id="poster">
+										</li>
+										<li class="list_content text">${director_movie.movietitle }</li>
+										<li class="list_content text">${director_movie.releasedate }</li>
+										<li class="list_content text">${director_movie.genre }</li>
+										<li class="list_content text">${director_movie.position }</li>
+									</ul>
 								</div>
 							</a>
 						
@@ -100,7 +103,6 @@
 					</div> <!-- end #list_body -->
 				
 					
-				</div> <!-- end #ㅡmovie_list -->
 				
 			</section>
 		</div> <!-- end #content -->

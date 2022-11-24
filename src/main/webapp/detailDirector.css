@@ -79,6 +79,8 @@ header{
 	display: block;
 	left: 0; top: 0; right: 0;
 	background: rgb(243, 243, 243);
+	z-index: 50;
+	border-bottom:1px solid #D9CDBF;
 }
 
 
@@ -94,6 +96,29 @@ header{
 	display: block;
 }
 
+#movie_list{
+	border: 2px solid #BF9B7A;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.list_title{
+	margin: 20px;
+	margin-right: 120px;
+}
+
+#list_body{
+	/*border: 3px solid blue;*/
+	display: inline-block;
+}
+
+.list_content{
+	margin: 20px;
+	margin-right: 60px;
+}
+.text{
+	margin-top: 80px;
+}
 
 #poster{
 	width: 100px;

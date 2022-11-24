@@ -11,52 +11,61 @@
 <body>
 	<div id="page_wrapper">
 		
-		<header>
-				<div id="main_header">
-					<nav id="main_navigation">
-						<ul>
-							<li class="navigation_menu">
-								<a href="mainPage.do">
-									<img src="./images/mainlogo.png" width="300" id="mainlogo">
-								</a>
-							</li>
-							
-							<li class="navigation_menu">
-								<a href="#">
-									<button class="menu_icon">자유게시판</button>
-								</a>
-							</li>
-							<li class="navigation_menu">
-							<a href="#">
-								<c:if test="${userno != null }">
-									<button class="menu_icon" id="mypage_icon">마이페이지</button>
-								</c:if>
-								<c:if test="${userno == null }">
-									<button class="menu_icon" id="join_icon">회원가입</button>
-								</c:if>
+		<!-- header -->
+		<div id="header_container">
+			<header>
+				<nav>
+					<ul id="menu_list">
+						<!-- 메인 로고 -->
+						<li class="navigation_menu" id="mainlogo_li">
+							<a href="mainPage.do">
+								<img src="./images/mainlogo.png" width="300" id="mainlogo">
 							</a>
 						</li>
+						<li id="empty">&nbsp;</li>
+						<!-- 자유게시판 아이콘 -->
 						<li class="navigation_menu">
-							<a href="#">
-								<input type="hidden" value="${userno }" id="userno">
-								<c:if test="${userno != null }">
-									<button class="menu_icon" id="logout_icon">로그아웃</button>
-								</c:if>
-								<c:if test="${userno == null }">
-									<button class="menu_icon" id="login_icon">로그인</button>
-								</c:if>
+							<a href="listBoard.do">
+								<button class="menu_icon" id="board_icon">자유게시판</button>
 							</a>
 						</li>
-						</ul>
-					</nav>
-				</div>
+						<!-- 회원가입 / 마이페이지 아이콘 -->
+						<li class="navigation_menu">
+							<c:if test="${userno != null }">
+								<a href="myPage.do">
+									<button class="menu_icon" id="mypage_icon">마이페이지</button>
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
+									<button class="menu_icon" id="join_icon">회원가입</button>
+								</a>
+							</c:if>
+						</li>
+						<!-- 로그인 / 로그아웃 아이콘 -->
+						<li class="navigation_menu">
+							<input type="hidden" value="${userno }" id="userno">
+							<c:if test="${userno != null }">
+								<a href="#">
+									<button class="menu_icon" id="logout_icon">로그아웃</button>
+								</a>
+							</c:if>
+							<c:if test="${userno == null }">
+								<a href="#">
+									<button class="menu_icon" id="login_icon">로그인</button>
+								</a>
+							</c:if>
+						</li>
+					</ul> <!-- end #menu_list -->
+				</nav>
 			</header>
+		</div> <!-- end #header_container -->
 			
 			
 		<div id="content">
 			<section>
 				<div id="actor_container">
-					<img alt="" src="./images/atorimg/${actorvo.actorimg }">
+					<img alt="" src="./images/actorimg/${actorvo.actorimg }">
 				</div>
 				<div id="actor_info">
 					<h1>${actorvo.actorname }</h1>
@@ -64,32 +73,34 @@
 				</div>
 				<hr>
 				<div id="movie_list">
-					<div id="list_head">
-						<div class="list_title">포스터</div>
-						<div class="list_title">제목</div>
-						<div class="list_title">개봉연도</div>
-						<div class="list_title">장르</div>
-						<div class="list_title">역할</div>
-					</div>
+					<ul id="list_head">
+						<li class="list_title">포스터</li>
+						<li class="list_title">제목</li>
+						<li class="list_title">개봉일</li>
+						<li class="list_title">장르</li>
+						<li class="list_title">역할</li>
+					</ul>
+				</div> <!-- end #movie_list -->
 					
 					<div id="list_body">
 						<c:forEach var="actor_movie" items="${actor_movie }">
 							<a href="detailMovie.do?movieno=${actor_movie.movieno }">
 								<div class="movie_container">
-									<div>
-										<img alt="" src="./images/poster/${actor_movie.poster }" id="poster">
-									</div>
-									<div>${actor_movie.movietitle }</div>
-									<div>${actor_movie.releasedate }</div>
-									<div>${actor_movie.genre }</div>
-									<div>${actor_movie.position } | ${actor_movie.role }</div>
+									<ul>
+										<li class="list_content">
+											<img alt="" src="./images/poster/${actor_movie.poster }" id="poster">
+										</li>
+										<li class="list_content text">${actor_movie.movietitle }</li>
+										<li class="list_content text">${actor_movie.releasedate }</li>
+										<li class="list_content text">${actor_movie.genre }</li>
+										<li class="list_content text">${actor_movie.position } | ${actor_movie.role }</li>
+									</ul>
 								</div>
 							</a>
 						</c:forEach>
 					</div> <!-- end #list_body -->
 				
 					
-				</div> <!-- end #ㅡmovie_list -->
 				
 			</section>
 		</div> <!-- end #content -->

@@ -1,103 +1,127 @@
+/*중앙 정렬 레이아웃 초기화*/
 * {
 	margin: 0;
 	padding: 0
 }
 
-p{
-	margin-bottom: 5px;	
-}
-
-ul{
-	list-style: none;
-	border: 5px solid pink;
-}
-li{
-	list-style: none;
-	float: left;
-	cursor: pointer;
-}
-
-.navigation_menu{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	
-}
-
-/*상단 우측 아이콘 정렬*/
-#board_icon{
-	margin-left: 600px;
-}
-
-header{
-	margin: 0 auto;
-	width: 1300px;
-}
-
-#main_header{
-	width: 1300px;
-}
-
-#main_logo{
-	margin: 10px;
-	padding: 10px;
-}
-
-
-#page_wrapper{
+/*전체*/
+body{
 	background: rgb(243, 243, 243);
 }
 
+/*태그 선택자 설정*/
+p{
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
 
+li{
+	list-style: none;
+	float: left;
+}
+
+button{
+	cursor: pointer;
+}
 
 a{
 	text-decoration: none;
 	color: black;
-	
 }
-
-.menu_icon {
-	margin: 25px 10px 0 10px; /*위 오 아 왼*/
-	background: none;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 5px;
-	cursor: pointer;
-}
-
-
-
-#content{
-	clear: both;
-	margin: 0 auto;
-	width: 960px;
-	border: 5px red solid;
-	padding: 30px;
-}
-
-#mainimg_container{
-	border: 5px solid blue;
-	margin-bottom: 100px;
-}
-
-#mainimg{
-	margin-left: 35px;
-}
-
 
 hr{
 	margin: 20px 0;
 }
 
 
-h2{
-	margin: 10px 0;
+/*상단바*/
+/*중앙 정렬*/
+header{
+	/*margin: 0 auto;*/
+	width: 1300px;
+	background: rgb(243, 243, 243);
+	
+	
+}
+.navigation_menu{
+	margin: 20px 0;
 }
 
-p{
-	margin-left: 10px;
+/*상단 우측 아이콘 정렬*/
+#empty{
+	margin-left: 570px;
 }
 
+/*메인로고*/
+#mainlogo_li{
+	margin-left: 30px;
+}
+
+.menu_icon {
+	margin: 32px 10px 0 10px; /*위 오 아 왼*/
+	background: none;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+	cursor: pointer;
+	font-family: '나눔스퀘어라운드';
+	/*border: 2px solid #BF9B7A;*/
+	/*border-radius: 5px;*/
+	border: none;
+	color: #0D0D0D;
+}
+
+#header_container{
+	position: fixed;
+	width: 1300px;
+	margin: 0 auto;
+	/*margin-left: 150px;*/
+	/*border: 5px solid red;*/
+	display: block;
+	left: 0; top: 0; right: 0;
+	background: rgb(243, 243, 243);
+	z-index: 50;
+	border-bottom:1px solid #D9CDBF;
+}
+
+
+/*body*/
+#content{
+	/*clear: both;*/
+	margin: 0 auto;
+	margin-top: 200px;
+	width: 960px;
+	border: 2px solid #BF9B7A;
+	padding: 30px;
+	border-radius: 5px;
+	display: block;
+}
+
+
+#movie_list{
+	border: 2px solid #BF9B7A;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.list_title{
+	margin: 20px;
+	margin-right: 120px;
+}
+
+#list_body{
+	/*border: 3px solid blue;*/
+	display: inline-block;
+}
+
+.list_content{
+	margin: 20px;
+	margin-right: 60px;
+}
+.text{
+	margin-top: 80px;
+}
 
 #poster{
-	width: 150px;
+	width: 100px;
 }
