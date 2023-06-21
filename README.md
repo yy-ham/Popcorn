@@ -42,7 +42,7 @@
 
 <h2>서비스 흐름도</h2>
 <p>
-  <img src="https://github.com/yy-ham/Trip-Contest/assets/118264054/bffedade-5a45-447d-bbe4-3bab6d7bc943" width="600">
+  <img src="https://github.com/yy-ham/Trip-Contest/assets/118264054/bffedade-5a45-447d-bbe4-3bab6d7bc943" width="500">
 </p>
 <br>
 <br>
